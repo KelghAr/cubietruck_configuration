@@ -1,0 +1,53 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides:          paster
+# Required-Start:    $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: starts the paster server
+# Description:       starts paster
+# Required-Stop: $syslog
+### END INIT INFO
+ 
+ 
+PROJECT=/home/kelghar/git/syncserver
+VIRTUALENV=/home/kelghar/git/syncserver
+PID_DIR=/home/kelghar/git/syncserver
+PID_FILE=/home/kelghar/git/syncserver/syncserver.pid
+LOG_FILE=/home/kelghar/git/syncserver/logs/synserver.log
+USER=kelghar
+GROUP=kelghar
+PROD_FILE=/home/kelghar/git/syncserver/syncserver.ini
+ 
+source $VIRTUALENV/local/bin/activate
+ 
+cd $PROJECT
+ 
+case "$1" in
+start)
+pserve --daemon --pid-file=$PID_FILE --log-file=$LOG_FILE \
+--user=$USER --group=$GROUP $PROD_FILE start
+ 
+;;
+stop)
+pserve --daemon --pid-file=$PID_FILE --log-file=$LOG_FILE \
+--user=$USER --group=$GROUP $PROD_FILE stop
+ 
+;;
+restart)
+pserve --daemon --pid-file=$PID_FILE --log-file=$LOG_FILE \
+--user=$USER --group=$GROUP $PROD_FILE restart
+ 
+;;
+status)
+pserve --daemon --pid-file=$PID_FILE --log-file=$LOG_FILE \
+--user=$USER --group=$GROUP status
+ 
+;;
+*)
+echo $"Usage: $0 {start|stop|restart|status}"
+exit 1
+esac
+ 
+exit $RET_VAL
