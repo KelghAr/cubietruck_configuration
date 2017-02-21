@@ -1,0 +1,26 @@
+services:
+  mail:
+    container_name: mail
+    domainname: andromeda.home
+    environment: [ENABLE_SPAMASSASSIN=1, ENABLE_CLAMAV=1, ENABLE_MANAGEDSIEVE=1, ONE_DIR=1]
+    hostname: mail
+    image: tvial/docker-mailserver:latest
+    ports: ['25:25', '143:143', '587:587', '993:993']
+    volumes: ['/home/kelghar/.docker-mailserver/maildata:/var/mail', '/home/kelghar/.docker-mailserver/mailstate:/var/mail-state',
+      '/home/kelghar/.docker-mailserver/config/:/tmp/docker-mailserver/']
+  pyload:
+    container_name: pyload
+    image: digrouz/docker-alp-pyload:latest
+    environment: [DOCKUID=1000, DOCKGID=1000]
+    ports: ['7227:7227', '8765:8000']
+    volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '/home/kelghar/.pyload/config:/config',
+      '/etc/localtime:/etc/localtime:ro']
+  transmission:
+    container_name: transmission
+    environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
+    image: linuxserver/transmission:latest
+    ports: ['9091:9091', '51413:51413', '51413:51413/udp']
+    volumes: ['/home/kelghar/.transmission:/config', '/home/kelghar/mount_point/share/_transmission/incoming:/downloads',
+      '/home/kelghar/mount_point/share/_transmission/watch:/watch']
+version: '2'
+
