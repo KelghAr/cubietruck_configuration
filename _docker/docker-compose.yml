@@ -12,13 +12,6 @@ services:
     ports: ['25:25', '143:143', '587:587', '993:993']
     volumes: ['/home/kelghar/.docker-mailserver/maildata:/var/mail', '/home/kelghar/.docker-mailserver/mailstate:/var/mail-state',
       '/home/kelghar/.docker-mailserver/config/:/tmp/docker-mailserver/']
-  nextcloud:
-    environment: [UID=1000, GID=1000, UPLOAD_MAX_SIZE=10G, APC_SHM_SIZE=128M, OPCACHE_MEM_SIZE=128,
-      CRON_PERIOD=15m, TZ=Europe/Berlin, ADMIN_USER=admin, ADMIN_PASSWORD=admin, DOMAIN=localhost,
-      DB_TYPE=sqlite3]
-    image: wonderfall/nextcloud:11.0
-    volumes: ['/mnt/nextcloud/data:/data', '/home/kelghar/.nextcloud/config:/config',
-      '/home/kelghar/.nextcloud/apps:/apps2']
   pyload:
     container_name: pyload
     image: digrouz/docker-alp-pyload:latest
