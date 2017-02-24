@@ -14,11 +14,17 @@ services:
       '/home/kelghar/.docker-mailserver/config/:/tmp/docker-mailserver/']
   pyload:
     container_name: pyload
-    image: digrouz/docker-alp-pyload:latest
     environment: [DOCKUID=1000, DOCKGID=1000]
+    image: digrouz/docker-alp-pyload:latest
     ports: ['7227:7227', '8765:8000']
     volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '/home/kelghar/.pyload/config:/config',
       '/etc/localtime:/etc/localtime:ro']
+  syncthing:
+    container_name: syncthing
+    environment: [PGID=1000, PUID=1000]
+    image: linuxserver/syncthing:latest
+    ports: ['8384:8384', '22000:22000', '21027:21027/udp']
+    volumes: ['/home/kelghar/.syncthing:/config', '/home/kelghar/mount_point/share/_syncthing:/sync']
   transmission:
     container_name: transmission
     environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
@@ -27,4 +33,3 @@ services:
     volumes: ['/home/kelghar/.transmission:/config', '/home/kelghar/mount_point/share/_transmission/incoming:/downloads',
       '/home/kelghar/mount_point/share/_transmission/watch:/watch']
 version: '2'
-
