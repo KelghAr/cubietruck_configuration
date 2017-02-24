@@ -15,7 +15,7 @@ services:
   pydio:
     container_name: pydio
     environment: [PGID=1000, PUID=1000, TZ=Europe/Berlin]
-    image: docker pull linuxserver/pydio:latest
+    image: linuxserver/pydio:latest
     ports: ['5454:443']
     volumes: ['/home/kelghar/.pydio:/config', '/home/kelghar/mount_point/share/_pydio:/data',
       '/etc/localtime:/etc/localtime:ro']
