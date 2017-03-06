@@ -1,5 +1,12 @@
 services:
+  beets:
+    container_name: beets
+    environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
+    ports: ['8337:8337']
+    volumes: ['/home/kelghar/.beets:/config', '/home/kelghar/mount_point/share/Musik:/music',
+      '/home/kelghar/mount_point/share/Import_Musik:/downloads']
   ffsync:
+    container_name: ffsync
     image: sunx/mozilla-syncserver:latest
     ports: ['5050:5000']
     volumes: ['/home/kelghar/.ffsync:/home/ffsync']
