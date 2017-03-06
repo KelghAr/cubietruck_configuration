@@ -1,6 +1,7 @@
 services:
   beets:
     container_name: beets
+    image: linuxserver/beets:latest
     environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
     ports: ['8337:8337']
     volumes: ['/home/kelghar/.beets:/config', '/home/kelghar/mount_point/share/Musik:/music',
