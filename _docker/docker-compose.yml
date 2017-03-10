@@ -17,7 +17,7 @@ services:
     environment: [ENABLE_SPAMASSASSIN=1, ENABLE_CLAMAV=1, ENABLE_MANAGEDSIEVE=1, ONE_DIR=1]
     hostname: mail
     image: tvial/docker-mailserver:latest
-    ports: ['25:25', '143:143', '587:587', '993:993']
+    ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
     volumes: ['/home/kelghar/.docker-mailserver/maildata:/var/mail', '/home/kelghar/.docker-mailserver/mailstate:/var/mail-state',
       '/home/kelghar/.docker-mailserver/config/:/tmp/docker-mailserver/']
   pydio:
