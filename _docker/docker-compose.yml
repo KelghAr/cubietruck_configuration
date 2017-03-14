@@ -24,6 +24,7 @@ services:
     container_name: photoshow
     environment: [PGID=1000, PUID=1000, TZ=Europe/Berlin]
     image: linuxserver/photoshow:latest
+    ports: ['6666:80']
     volumes: ['/home/kelghar/.photoshow:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder:/Pictures:ro',
       '/home/kelghar/mount_point/share/.photoshow/Thumbs:/Thumbs']
   pyload:
