@@ -1,8 +1,8 @@
 services:
   beets:
     container_name: beets
-    image: linuxserver/beets:latest
     environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
+    image: linuxserver/beets:latest
     ports: ['8337:8337']
     volumes: ['/home/kelghar/.beets:/config', '/home/kelghar/mount_point/share/Musik:/music',
       '/home/kelghar/mount_point/share/Import_Musik:/downloads']
@@ -20,6 +20,12 @@ services:
     ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
     volumes: ['/home/kelghar/.docker-mailserver/maildata:/var/mail', '/home/kelghar/.docker-mailserver/mailstate:/var/mail-state',
       '/home/kelghar/.docker-mailserver/config/:/tmp/docker-mailserver/']
+  photoshow:
+    container_name: photoshow
+    environment: [PGID=1000, PUID=1000, TZ=Europe/Berlin]
+    image: linuxserver/photoshow:latest
+    volumes: ['/home/kelghar/.photoshow:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder:/Pictures:ro',
+      '/home/kelghar/mount_point/share/.photoshow/Thumbs:/Thumbs']
   pyload:
     container_name: pyload
     environment: [DOCKUID=1000, DOCKGID=1000]
