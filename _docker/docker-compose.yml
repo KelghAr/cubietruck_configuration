@@ -11,6 +11,12 @@ services:
     image: sunx/mozilla-syncserver:latest
     ports: ['5050:5000']
     volumes: ['/home/kelghar/.ffsync:/home/ffsync']
+  lychee:
+    container_name: lychee
+    environment: [PGID=1000, PUID=1000]
+    image: linuxserver/lychee:latest
+    ports: ['4567:80']
+    volumes: ['/home/kelghar/.lychee:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder:/pictures']
   mail:
     container_name: mail
     domainname: andromeda.home
@@ -20,13 +26,6 @@ services:
     ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
     volumes: ['/home/kelghar/.docker-mailserver/maildata:/var/mail', '/home/kelghar/.docker-mailserver/mailstate:/var/mail-state',
       '/home/kelghar/.docker-mailserver/config/:/tmp/docker-mailserver/']
-  photoshow:
-    container_name: photoshow
-    environment: [PGID=1000, PUID=1000, TZ=Europe/Berlin]
-    image: linuxserver/photoshow:latest
-    ports: ['4567:80']
-    volumes: ['/home/kelghar/.photoshow:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder:/Pictures:ro',
-      '/home/kelghar/mount_point/share/.photoshow/Thumbs:/Thumbs']
   pyload:
     container_name: pyload
     environment: [DOCKUID=1000, DOCKGID=1000]
