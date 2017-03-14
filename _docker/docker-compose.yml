@@ -20,13 +20,6 @@ services:
     ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
     volumes: ['/home/kelghar/.docker-mailserver/maildata:/var/mail', '/home/kelghar/.docker-mailserver/mailstate:/var/mail-state',
       '/home/kelghar/.docker-mailserver/config/:/tmp/docker-mailserver/']
-  pydio:
-    container_name: pydio
-    environment: [PGID=1000, PUID=1000, TZ=Europe/Berlin]
-    image: linuxserver/pydio:latest
-    ports: ['5454:443']
-    volumes: ['/home/kelghar/.pydio:/config', '/home/kelghar/mount_point/share/_pydio:/data',
-      '/etc/localtime:/etc/localtime:ro']
   pyload:
     container_name: pyload
     environment: [DOCKUID=1000, DOCKGID=1000]
