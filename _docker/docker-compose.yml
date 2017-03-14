@@ -14,7 +14,7 @@ services:
   mail:
     container_name: mail
     domainname: andromeda.home
-    environment: [ENABLE_SPAMASSASSIN=1, ENABLE_CLAMAV=1, ENABLE_MANAGEDSIEVE=1, ONE_DIR=1]
+    environment: [ENABLE_SPAMASSASSIN=1, ENABLE_CLAMAV=1, ENABLE_MANAGESIEVE=1, ONE_DIR=1]
     hostname: mail
     image: tvial/docker-mailserver:latest
     ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
