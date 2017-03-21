@@ -6,17 +6,16 @@ services:
     ports: ['8337:8337']
     volumes: ['/home/kelghar/.beets:/config', '/home/kelghar/mount_point/share/Musik:/music',
       '/home/kelghar/mount_point/share/Import_Musik:/downloads']
+  dhcpd:
+    image: joebiellik/dhcpd:latest
+    network_mode: host
+    volumes: ['/home/kelghar/.dhcpd/dhcpd.conf:/etc/dhcp/dhcpd.conf']
   ffsync:
     container_name: ffsync
+    environment: ['PUBLIC_URL=https://sync_ff.home/']
     image: sunx/mozilla-syncserver:latest
     ports: ['5050:5000']
     volumes: ['/home/kelghar/.ffsync:/home/ffsync']
-  lychee:
-    container_name: lychee
-    environment: [PGID=1000, PUID=1000]
-    image: linuxserver/lychee:latest
-    ports: ['4567:80']
-    volumes: ['/home/kelghar/.lychee:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder:/pictures']
   mail:
     container_name: mail
     domainname: andromeda.home
