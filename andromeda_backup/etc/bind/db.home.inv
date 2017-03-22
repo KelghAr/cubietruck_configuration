@@ -1,0 +1,17 @@
+; BIND rvs db file for home
+
+$TTL 3600
+
+@       IN      SOA     andromeda.home.      root.andromeda.home. (
+                        2014082201	; serial number YYMMDDNN
+                        10800           ; Refresh
+                        3600            ; Retry
+                        604800          ; Expire
+                        3600            ; Min TTL
+			)
+
+	IN    	NS      andromeda.
+1	IN	PTR	gateway.home.
+42 	IN 	PTR	andromeda.home.
+110 	IN	PTR	ursa-minor.home.
+251	IN	PTR	aoi.home.

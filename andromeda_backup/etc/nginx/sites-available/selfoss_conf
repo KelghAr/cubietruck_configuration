@@ -1,0 +1,47 @@
+server {
+        listen       80;
+        server_name  selfoss.andromeda.home;
+        rewrite ^ https://$http_host$request_uri? permanent;    # force redirect http to https
+}
+
+server {
+    listen 443;
+    ssl on;
+    ssl_certificate        /etc/nginx/certs/andromeda.home/server.crt;
+    ssl_certificate_key    /etc/nginx/certs/andromeda.home/server.key;
+
+    access_log /var/log/nginx/rss.access.log;
+    error_log /var/log/nginx/rss.error.log;
+
+    server_name selfoss.andromeda.home;
+    root /var/www/selfoss/;
+
+    location ~* \ (gif|jpg|png) {
+        expires 30d;
+    }
+
+    location ~ ^/favicons/.*$ {
+        try_files $uri /data/$uri;
+    }
+
+    location ~ ^/thumbnails/.*$ {
+        try_files $uri /data/$uri;
+    }
+
+    location ~* ^/(data\/logs|data\/sqlite|config\.ini|\.ht) {
+        deny all;
+    }
+
+    location / {
+        index index.php index.html index.htm;
+        try_files $uri /public/$uri /index.php$is_args$args;
+    }
+
+    location ~ \.php$ {
+        #try_files $fastcgi_script_name =404;
+	fastcgi_index index.php;
+        fastcgi_pass   unix:/var/run/php5-fpm.sock;
+	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include        /etc/nginx/fastcgi_params;
+    }
+}

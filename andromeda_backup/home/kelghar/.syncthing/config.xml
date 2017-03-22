@@ -1,0 +1,181 @@
+<configuration version="19">
+    <folder id="5zc7r-nzpxc" label="Bilder" path="/sync/Bilder/" type="readwrite" rescanIntervalS="60" ignorePerms="false" autoNormalize="true">
+        <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" introducedBy=""></device>
+        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
+        <minDiskFreePct>1</minDiskFreePct>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullers>0</pullers>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerSleepS>0</pullerSleepS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <fsync>true</fsync>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+    </folder>
+    <folder id="default" label="Default Folder" path="/config/Sync/" type="readwrite" rescanIntervalS="60" ignorePerms="false" autoNormalize="true">
+        <device id="SPDMZOS-IKS2B7U-JWH2BTA-SUIRIFX-2AW7IJ5-4EUGYB4-6FTALSJ-PGKB7QE" introducedBy=""></device>
+        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
+        <minDiskFreePct>1</minDiskFreePct>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullers>0</pullers>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerSleepS>0</pullerSleepS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>-1</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <fsync>false</fsync>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+    </folder>
+    <folder id="p6w7x-p7ahl" label="Documents" path="/sync/Documents/" type="readwrite" rescanIntervalS="60" ignorePerms="false" autoNormalize="true">
+        <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" introducedBy=""></device>
+        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
+        <minDiskFreePct>1</minDiskFreePct>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullers>0</pullers>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerSleepS>0</pullerSleepS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <fsync>true</fsync>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+    </folder>
+    <folder id="motoe24g-lte-Bilder" label="Kamera" path="/sync/Bilder/Kamera/" type="readwrite" rescanIntervalS="60" ignorePerms="false" autoNormalize="true">
+        <device id="FXBDEMS-BJIEZCD-X6BFC5Z-4GVD5YL-DRZORF7-JTMBLKN-CCZXVW6-M4DN2QG" introducedBy=""></device>
+        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
+        <minDiskFreePct>1</minDiskFreePct>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullers>0</pullers>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerSleepS>0</pullerSleepS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <fsync>true</fsync>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+    </folder>
+    <folder id="aaw7g-ki2nh" label="Private" path="/sync/private/" type="readwrite" rescanIntervalS="60" ignorePerms="false" autoNormalize="true">
+        <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" introducedBy=""></device>
+        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
+        <minDiskFreePct>1</minDiskFreePct>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullers>0</pullers>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerSleepS>0</pullerSleepS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <fsync>true</fsync>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+    </folder>
+    <folder id="kwtsc-wb7np" label="Security Essentials" path="/sync/security-essentials/" type="readwrite" rescanIntervalS="60" ignorePerms="false" autoNormalize="true">
+        <device id="FXBDEMS-BJIEZCD-X6BFC5Z-4GVD5YL-DRZORF7-JTMBLKN-CCZXVW6-M4DN2QG" introducedBy=""></device>
+        <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" introducedBy=""></device>
+        <device id="SPDMZOS-IKS2B7U-JWH2BTA-SUIRIFX-2AW7IJ5-4EUGYB4-6FTALSJ-PGKB7QE" introducedBy=""></device>
+        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
+        <minDiskFreePct>1</minDiskFreePct>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullers>0</pullers>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerSleepS>0</pullerSleepS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <fsync>true</fsync>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+    </folder>
+    <device id="FXBDEMS-BJIEZCD-X6BFC5Z-4GVD5YL-DRZORF7-JTMBLKN-CCZXVW6-M4DN2QG" name="MotoE2(4G-LTE)" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+    </device>
+    <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" name="Ursa-Minor" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+    </device>
+    <device id="SPDMZOS-IKS2B7U-JWH2BTA-SUIRIFX-2AW7IJ5-4EUGYB4-6FTALSJ-PGKB7QE" name="Arbeit PC" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+    </device>
+    <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" name="Andromeda" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+    </device>
+    <gui enabled="true" tls="false" debugging="false">
+        <address>127.0.0.1:8384</address>
+        <apikey>GsRJq2SmQL4yrNhDjMWkEZ3zsQjmxsmt</apikey>
+        <theme>default</theme>
+    </gui>
+    <options>
+        <listenAddress>default</listenAddress>
+        <globalAnnounceServer>default</globalAnnounceServer>
+        <globalAnnounceEnabled>true</globalAnnounceEnabled>
+        <localAnnounceEnabled>true</localAnnounceEnabled>
+        <localAnnouncePort>21027</localAnnouncePort>
+        <localAnnounceMCAddr>[ff12::8384]:21027</localAnnounceMCAddr>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <reconnectionIntervalS>60</reconnectionIntervalS>
+        <relaysEnabled>true</relaysEnabled>
+        <relayReconnectIntervalM>10</relayReconnectIntervalM>
+        <startBrowser>true</startBrowser>
+        <natEnabled>true</natEnabled>
+        <natLeaseMinutes>60</natLeaseMinutes>
+        <natRenewalMinutes>30</natRenewalMinutes>
+        <natTimeoutSeconds>10</natTimeoutSeconds>
+        <urAccepted>-1</urAccepted>
+        <urUniqueID></urUniqueID>
+        <urURL>https://data.syncthing.net/newdata</urURL>
+        <urPostInsecurely>false</urPostInsecurely>
+        <urInitialDelayS>1800</urInitialDelayS>
+        <restartOnWakeup>true</restartOnWakeup>
+        <autoUpgradeIntervalH>12</autoUpgradeIntervalH>
+        <upgradeToPreReleases>false</upgradeToPreReleases>
+        <keepTemporariesH>24</keepTemporariesH>
+        <cacheIgnoredFiles>false</cacheIgnoredFiles>
+        <progressUpdateIntervalS>5</progressUpdateIntervalS>
+        <limitBandwidthInLan>false</limitBandwidthInLan>
+        <minHomeDiskFreePct>1</minHomeDiskFreePct>
+        <releasesURL>https://upgrades.syncthing.net/meta.json</releasesURL>
+        <overwriteRemoteDeviceNamesOnConnect>false</overwriteRemoteDeviceNamesOnConnect>
+        <tempIndexMinBlocks>10</tempIndexMinBlocks>
+        <trafficClass>0</trafficClass>
+        <weakHashSelectionMethod>auto</weakHashSelectionMethod>
+    </options>
+</configuration>

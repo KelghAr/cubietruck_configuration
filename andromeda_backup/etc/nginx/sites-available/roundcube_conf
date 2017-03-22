@@ -1,0 +1,19 @@
+server {
+    listen *:12345;
+
+    access_log /var/log/nginx/roundcube.access.log;
+    error_log /var/log/nginx/roundcube.error.log;
+
+    root /var/www/roundcube;
+    index index.html index.htm index.php;
+
+    location ~ [^/]\.php(/|$) {
+
+        fastcgi_index index.php;
+        include fcgi.conf;
+        fastcgi_pass unix:/var/run/php-fcgi.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+
+    }
+
+}

@@ -1,0 +1,25 @@
+# ~/.tmuxinator/andromeda.yml
+
+name: andromeda
+root: ~/
+
+windows:
+  - main:
+      layout: 3cd9,210x64,0,0[210x32,0,0,0,210x31,0,33{105x31,0,33,1,104x31,106,33,2}] 
+      panes:
+        - clear
+        - cd ~/mount_point/share/pyload && cl
+        - cd ~/git/cubietruck_configuration && cl
+  - tools:
+      layout: 58c5,237x68,0,0[237x16,0,0,1,237x17,0,17{118x17,0,17,6,118x17,119,17,7},237x33,0,35{119x33,0,35,4,117x33,120,35,5}]
+      panes:
+        - clear
+        - clear
+        - klaus:
+          - cd ~/git/cubietruck_config/permanent_configs
+          - clear
+        - git:
+          - cd ~/git
+          - clear
+        - syncserver:
+          - cd ~/git/syncserver

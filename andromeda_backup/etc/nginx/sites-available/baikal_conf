@@ -1,0 +1,42 @@
+server {
+        listen       80;
+        server_name  baikal.home;
+        rewrite ^ https://$http_host$request_uri? permanent;    # force redirect http to https
+}
+
+
+server {
+    listen       443;
+    ssl on;
+    ssl_certificate        /etc/nginx/certs/andromeda.home/server.crt;
+    ssl_certificate_key    /etc/nginx/certs/andromeda.home/server.key;
+
+    server_name  baikal.home;
+
+    root  /var/www/baikal/html;
+    index index.php;
+
+	rewrite ^/.well-known/caldav /cal.php redirect;
+	rewrite ^/.well-known/carddav /card.php redirect;
+    
+    charset utf-8;
+
+    location ~ /(\.ht|Core|Specific) {
+        deny all;
+        return 404;
+    }
+
+    location ~ ^(.+\.php)(.*)$ {
+        try_files $fastcgi_script_name =404;
+        fastcgi_split_path_info  ^(.+\.php)(.*)$;
+	fastcgi_pass   unix:/var/run/php-fcgi.sock;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        fastcgi_param  PATH_INFO        $fastcgi_path_info;
+        include        /etc/nginx/fastcgi_params;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /var/www/nginx-default;
+    }
+}
