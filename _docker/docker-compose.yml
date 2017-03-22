@@ -9,7 +9,7 @@ services:
   dhcpd:
     image: joebiellik/dhcpd:latest
     network_mode: host
-    volumes: ['/home/kelghar/.dhcpd/dhcpd.conf:/etc/dhcp/dhcpd.conf']
+    volumes: ['/home/kelghar/.dhcpd/:/etc/dhcp/']
   ffsync:
     container_name: ffsync
     environment: ['PUBLIC_URL=https://sync_ff.home/']
