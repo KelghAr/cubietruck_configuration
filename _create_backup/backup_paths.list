@@ -17,10 +17,10 @@
 /home/kelghar/tc_mount.sh
 /home/kelghar/.tmuxinator/
 /home/kelghar/.vimrc
-/home/kelghar/.beets/
-/home/kelghar/.dhcpd/
+/home/kelghar/.beets/config.yaml
+/home/kelghar/.dhcpd/dhcpd.conf
 /home/kelghar/.docker-mailserver/config/
 /home/kelghar/.ffsync/
-/home/kelghar/.syncthing/
-/home/kelghar/.transmission/
+/home/kelghar/.syncthing/config.xml
+/home/kelghar/.transmission/serttings.json
 /var/www/selfoss/config.ini
