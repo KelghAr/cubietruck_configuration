@@ -45,9 +45,9 @@ make_dir $CONFIG_DIR
 echo "Apply metastore file"
 apply_or_create_metadata a
 
-echo "Stop services"
+#echo "Stop services"
 #shutting down SERVICES_TO_STOP
-start_stop_services stop
+#start_stop_services stop
 
 echo "Make rsync backup"
 run_rsync_backup
@@ -58,14 +58,14 @@ save_crontab
 echo "Create metastore file"
 apply_or_create_metadata s
 
-echo "Start services again"
-start_stop_services start
+#echo "Start services again"
+#start_stop_services start
 
 echo "Git stuff"
 git_stuff
 
-echo "Backup mysql"
-backup_mysql
+#echo "Backup mysql"
+#backup_mysql
 
-echo "Backup mail"
-bash $SCRIPT_HOME/_mail_backup/backup_mail.sh
+#echo "Backup mail"
+#bash $SCRIPT_HOME/_mail_backup/backup_mail.sh
