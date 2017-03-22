@@ -20,7 +20,7 @@
 /home/kelghar/.beets/config.yaml
 /home/kelghar/.dhcpd/dhcpd.conf
 /home/kelghar/.docker-mailserver/config/
-/home/kelghar/.ffsync/
+/home/kelghar/.ffsync/syncserver.ini
 /home/kelghar/.syncthing/config.xml
 /home/kelghar/.transmission/settings.json
 /var/www/selfoss/config.ini
