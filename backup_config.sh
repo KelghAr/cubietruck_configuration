@@ -57,7 +57,7 @@ save_crontab
 
 echo "Create metastore file"
 rm $SCRIPT_HOME/.git_cache_meta
-sh -e $SCRIPT_HOME/diverse_bash_files/git-cache-meta.sh --store
+sh -e $SCRIPT_HOME/diverse_bash_scripts/git-cache-meta.sh --store
 #apply_or_create_metadata s
 
 #echo "Start services again"
