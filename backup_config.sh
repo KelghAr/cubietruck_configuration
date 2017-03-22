@@ -42,8 +42,8 @@ save_crontab() {
 make_dir $CONFIG_DIR
 
 
-echo "Apply metastore file"
-apply_or_create_metadata a
+#echo "Apply metastore file"
+#apply_or_create_metadata a
 
 #echo "Stop services"
 #shutting down SERVICES_TO_STOP
@@ -55,8 +55,8 @@ run_rsync_backup
 echo "Saving Crontab"
 save_crontab
 
-echo "Create metastore file"
-apply_or_create_metadata s
+#echo "Create metastore file"
+#apply_or_create_metadata s
 
 #echo "Start services again"
 #start_stop_services start
