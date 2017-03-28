@@ -1,5 +1,5 @@
 import re, os, sys
-regex = '^((?:(?!\.part\d+\.rar$).)*)\.(?:(?:part0*1\.)?rar|r?0*1)$'
+regex = '^((?:(?!\.part\d+\.rar$).)*)\.(?:(?:part0*1\.)?rar)$'
 extractDir = './extracted'
 password = '-'
 
@@ -24,22 +24,23 @@ def find_all(regex, path):
 
 
 def send_to_trash(dir):
+	from send2trash import send2trash
 	origin = 'send_to_trash'
 	log(origin, 'Removing ' + dir)
-	fileWitoutEnding = ('.').join(dir.split('.')[:-2])
-	from send2trash import send2trash
+	# find *.r01 ect and remove
+	fileWitoutEnding = os.path.splitext(os.path.basename(dir))[0]
 	regexp = re.compile(r'part\d+\.')
-	if regexp.search(dir) is not None:
-		for root, dirs, files in os.walk(os.path.dirname(dir)):
-			for file in files:
-				regexp = re.compile(re.escape(fileWitoutEnding) + r'\.part\d+\.')
-				if regexp.search(os.path.join(root,file)) is not None:
-					delFile = os.path.join(root, file)
-					log(origin, 'Trashing file: ' + delFile)
-					send2trash(delFile)
+	if regexp.search(dir) is None:
+		regexp = re.compile(r'(rar|r\d+)$')
 	else:
-		log(origin, 'Trashing file: ' + dir)
-		send2trash(dir)
+		# remove part1
+		fileWitoutEnding = os.path.splitext(fileWitoutEnding)[0]
+	for file in os.listdir(os.path.dirname(dir)):
+		if regexp.search(file) is not None and fileWitoutEnding in file:
+			fileToTrash = os.path.join(os.path.dirname(dir), file)
+			log(origin, 'Trashing file: ' + fileToTrash)
+			#send2trash(fileToTrash)
+	return
 
 def extract(file):
 	import subprocess
@@ -89,20 +90,20 @@ def main():
 		if retval == 0:
 			send_to_trash(os.path.abspath(file))
 	remove_empty_folders('.')
-	print 'mailing'
+	print ("mailing")
 	try:
 		smtpObj = smtplib.SMTP('localhost')
 		smtpObj.sendmail(sender, receivers, mailmessage)
-		print "Successfully sent email"
+		print ("Successfully sent email")
 	except SMTPException:
-		print "Error: unable to send email"
+		print ("Error: unable to send email")
 
 def log(origin, message, print_commandline=True):
 	if print_commandline:
 		global mailmessage
 		mailmessage = mailmessage + 'LOG from ' + origin + ' : ' + message + '\n'
 	else:
-		print 'LOG from ' + origin + ' : ' + message
+		print ('LOG from ' + origin + ' : ' + message)
 
 if __name__ == "__main__":
     main()
