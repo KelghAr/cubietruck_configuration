@@ -14,6 +14,8 @@ def find_all(regex, path):
 	result = []
 	comp = re.compile(regex, re.IGNORECASE)
 	for root, dirs, files in os.walk(path):
+		if 'jj' in dirs:
+			dirs.remove('jj')
 		for file in files:
 			if comp.match(file):
 				result.append(os.path.join(root, file))
@@ -24,12 +26,20 @@ def find_all(regex, path):
 def send_to_trash(dir):
 	origin = 'send_to_trash'
 	log(origin, 'Removing ' + dir)
+	fileWitoutEnding = ('.').join(dir.split('.')[:-2])
 	from send2trash import send2trash
-	for root, dirs, files in os.walk(dir):
-		for file in files:
-			delFile = os.path.join(root, file)
-			log(origin, 'Trashing file: ' + delFile)
-			send2trash(delFile)
+	regexp = re.compile(r'part\d+\.')
+	if regexp.search(dir) is not None:
+		for root, dirs, files in os.walk(os.path.dirname(dir)):
+			for file in files:
+				regexp = re.compile(re.escape(fileWitoutEnding) + r'\.part\d+\.')
+				if regexp.search(os.path.join(root,file)) is not None:
+					delFile = os.path.join(root, file)
+					log(origin, 'Trashing file: ' + delFile)
+					send2trash(delFile)
+	else:
+		log(origin, 'Trashing file: ' + dir)
+		send2trash(dir)
 
 def extract(file):
 	import subprocess
@@ -77,12 +87,12 @@ def main():
 	for file in files:
 		retval = extract(file)
 		if retval == 0:
-			send_to_trash(os.path.dirname(os.path.abspath(file)))
+			send_to_trash(os.path.abspath(file))
 	remove_empty_folders('.')
 	print 'mailing'
 	try:
 		smtpObj = smtplib.SMTP('localhost')
-		smtpObj.sendmail(sender, receivers, mailmessage)         
+		smtpObj.sendmail(sender, receivers, mailmessage)
 		print "Successfully sent email"
 	except SMTPException:
 		print "Error: unable to send email"
