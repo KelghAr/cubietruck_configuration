@@ -19,7 +19,7 @@ services:
   mail:
     container_name: mail
     domainname: andromeda.home
-    environment: [ENABLE_SPAMASSASSIN=1, ENABLE_CLAMAV=1, ENABLE_MANAGESIEVE=1, ONE_DIR=1]
+    environment: [ENABLE_SPAMASSASSIN=1, ENABLE_CLAMAV=1, ENABLE_MANAGESIEVE=1, ONE_DIR=1, DMS_DEBUG=1]
     hostname: mail
     image: tvial/docker-mailserver:latest
     ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
@@ -29,7 +29,7 @@ services:
     container_name: pyload
     environment: [DOCKUID=1000, DOCKGID=1000]
     image: digrouz/docker-alp-pyload:latest
-    ports: ['7227:7227', '8765:8000']
+    ports: ['7227:7227', '8765:8000', '9666:9666']
     volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '/home/kelghar/.pyload/config:/config',
       '/etc/localtime:/etc/localtime:ro']
   syncthing:
