@@ -19,7 +19,7 @@ services:
   mail:
     container_name: mail
     domainname: andromeda.home
-    environment: [ENABLE_SPAMASSASSIN=1, ENABLE_CLAMAV=1, ENABLE_MANAGESIEVE=1, ONE_DIR=1, DMS_DEBUG=1]
+    environment: [ENABLE_SPAMASSASSIN=1, ENABLE_CLAMAV=1, ENABLE_MANAGESIEVE=1, ONE_DIR=1]
     hostname: mail
     image: tvial/docker-mailserver:latest
     ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
@@ -32,6 +32,11 @@ services:
     ports: ['7227:7227', '8765:8000', '9666:9666']
     volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '/home/kelghar/.pyload/config:/config',
       '/etc/localtime:/etc/localtime:ro']
+  radicale: 
+    container_name: radicale
+    image: rdissertori/docker-radicale
+    ports: '5232:5232'
+    volumes: '/home/kelghar/.radicale:/data/radicale'
   syncthing:
     container_name: syncthing
     environment: [PGID=1000, PUID=1000]
