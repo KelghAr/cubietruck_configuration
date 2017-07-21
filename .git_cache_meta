@@ -1,10 +1,10 @@
 chown 0 .git_cache_meta
 chgrp 0 .git_cache_meta
-touch -c -d "2017-03-22 16:04:36.0586226840" .git_cache_meta
+touch -c -d "2017-07-21 14:28:44.9279176780" .git_cache_meta
 chmod 0644 .git_cache_meta
 chown 1000 .gitignore
 chgrp 1000 .gitignore
-touch -c -d "2017-03-22 14:11:07.3144917020" .gitignore
+touch -c -d "2017-07-21 09:57:27.0282398120" .gitignore
 chmod 0644 .gitignore
 chown 1000 LICENSE
 chgrp 1000 LICENSE
@@ -16,11 +16,11 @@ touch -c -d "2017-03-22 14:11:07.3864917040" README.md
 chmod 0644 README.md
 chown 1000 _backup_config/functions.config.sh
 chgrp 1000 _backup_config/functions.config.sh
-touch -c -d "2017-03-22 15:16:47.7465675050" _backup_config/functions.config.sh
+touch -c -d "2017-07-21 14:28:43.5198857490" _backup_config/functions.config.sh
 chmod 0644 _backup_config/functions.config.sh
 chown 1000 _backup_config/variables.config.sh
 chgrp 1000 _backup_config/variables.config.sh
-touch -c -d "2017-03-22 14:11:07.3864917040" _backup_config/variables.config.sh
+touch -c -d "2017-07-21 14:28:43.4958852040" _backup_config/variables.config.sh
 chmod 0644 _backup_config/variables.config.sh
 chown 1000 _create_backup/backup_exclude.list
 chgrp 1000 _create_backup/backup_exclude.list
@@ -28,7 +28,7 @@ touch -c -d "2017-03-22 14:11:07.3864917040" _create_backup/backup_exclude.list
 chmod 0644 _create_backup/backup_exclude.list
 chown 1000 _create_backup/backup_paths.list
 chgrp 1000 _create_backup/backup_paths.list
-touch -c -d "2017-03-22 15:17:46.2665686310" _create_backup/backup_paths.list
+touch -c -d "2017-07-21 13:45:58.6502002920" _create_backup/backup_paths.list
 chmod 0644 _create_backup/backup_paths.list
 chown 1000 _create_backup/databases_backup.list
 chgrp 1000 _create_backup/databases_backup.list
@@ -36,7 +36,7 @@ touch -c -d "2017-03-22 14:11:07.3864917040" _create_backup/databases_backup.lis
 chmod 0644 _create_backup/databases_backup.list
 chown 1000 _docker/docker-compose.yml
 chgrp 1000 _docker/docker-compose.yml
-touch -c -d "2017-03-22 14:11:07.3864917040" _docker/docker-compose.yml
+touch -c -d "2017-07-21 09:57:27.0082393750" _docker/docker-compose.yml
 chmod 0644 _docker/docker-compose.yml
 chown 1000 _mail_backup/backup_mail.sh
 chgrp 1000 _mail_backup/backup_mail.sh
@@ -44,11 +44,211 @@ touch -c -d "2017-03-22 14:11:07.3864917040" _mail_backup/backup_mail.sh
 chmod 0644 _mail_backup/backup_mail.sh
 chown 1000 _restore_backup/restore_exclude.list
 chgrp 1000 _restore_backup/restore_exclude.list
-touch -c -d "2017-03-22 14:11:07.3864917040" _restore_backup/restore_exclude.list
+touch -c -d "2017-07-21 14:28:43.5358861110" _restore_backup/restore_exclude.list
 chmod 0644 _restore_backup/restore_exclude.list
+chown 1000 andromeda_backup/crontab_config
+chgrp 1000 andromeda_backup/crontab_config
+touch -c -d "2017-07-21 14:28:44.9119173150" andromeda_backup/crontab_config
+chmod 0644 andromeda_backup/crontab_config
+chown 0 andromeda_backup/etc/aliases
+chgrp 0 andromeda_backup/etc/aliases
+touch -c -d "2017-03-22 18:49:27.1148129610" andromeda_backup/etc/aliases
+chmod 0644 andromeda_backup/etc/aliases
+chown 0 andromeda_backup/etc/bind/bind.keys
+chgrp 0 andromeda_backup/etc/bind/bind.keys
+touch -c -d "2017-03-22 18:49:27.1148129610" andromeda_backup/etc/bind/bind.keys
+chmod 0644 andromeda_backup/etc/bind/bind.keys
+chown 0 andromeda_backup/etc/bind/db.0
+chgrp 0 andromeda_backup/etc/bind/db.0
+touch -c -d "2017-03-22 18:49:27.1188129610" andromeda_backup/etc/bind/db.0
+chmod 0644 andromeda_backup/etc/bind/db.0
+chown 0 andromeda_backup/etc/bind/db.127
+chgrp 0 andromeda_backup/etc/bind/db.127
+touch -c -d "2017-03-22 18:49:27.1188129610" andromeda_backup/etc/bind/db.127
+chmod 0644 andromeda_backup/etc/bind/db.127
+chown 0 andromeda_backup/etc/bind/db.255
+chgrp 0 andromeda_backup/etc/bind/db.255
+touch -c -d "2017-03-22 18:49:27.1188129610" andromeda_backup/etc/bind/db.255
+chmod 0644 andromeda_backup/etc/bind/db.255
+chown 0 andromeda_backup/etc/bind/db.empty
+chgrp 0 andromeda_backup/etc/bind/db.empty
+touch -c -d "2017-03-22 18:49:27.1188129610" andromeda_backup/etc/bind/db.empty
+chmod 0644 andromeda_backup/etc/bind/db.empty
+chown 0 andromeda_backup/etc/bind/db.home
+chgrp 115 andromeda_backup/etc/bind/db.home
+touch -c -d "2017-03-22 18:49:27.1188129610" andromeda_backup/etc/bind/db.home
+chmod 0644 andromeda_backup/etc/bind/db.home
+chown 0 andromeda_backup/etc/bind/db.home.inv
+chgrp 115 andromeda_backup/etc/bind/db.home.inv
+touch -c -d "2017-03-22 18:49:27.1188129610" andromeda_backup/etc/bind/db.home.inv
+chmod 0644 andromeda_backup/etc/bind/db.home.inv
+chown 0 andromeda_backup/etc/bind/db.local
+chgrp 0 andromeda_backup/etc/bind/db.local
+touch -c -d "2017-03-22 18:49:27.1188129610" andromeda_backup/etc/bind/db.local
+chmod 0644 andromeda_backup/etc/bind/db.local
+chown 0 andromeda_backup/etc/bind/db.root
+chgrp 0 andromeda_backup/etc/bind/db.root
+touch -c -d "2017-03-22 18:49:27.1188129610" andromeda_backup/etc/bind/db.root
+chmod 0644 andromeda_backup/etc/bind/db.root
+chown 0 andromeda_backup/etc/bind/named.conf
+chgrp 115 andromeda_backup/etc/bind/named.conf
+touch -c -d "2017-03-22 18:49:27.1188129610" andromeda_backup/etc/bind/named.conf
+chmod 0644 andromeda_backup/etc/bind/named.conf
+chown 0 andromeda_backup/etc/bind/named.conf.default-zones
+chgrp 115 andromeda_backup/etc/bind/named.conf.default-zones
+touch -c -d "2017-03-22 18:49:27.1228129610" andromeda_backup/etc/bind/named.conf.default-zones
+chmod 0644 andromeda_backup/etc/bind/named.conf.default-zones
+chown 0 andromeda_backup/etc/bind/named.conf.local
+chgrp 115 andromeda_backup/etc/bind/named.conf.local
+touch -c -d "2017-03-22 18:49:27.1228129610" andromeda_backup/etc/bind/named.conf.local
+chmod 0644 andromeda_backup/etc/bind/named.conf.local
+chown 0 andromeda_backup/etc/bind/named.conf.options
+chgrp 115 andromeda_backup/etc/bind/named.conf.options
+touch -c -d "2017-03-22 18:49:27.1228129610" andromeda_backup/etc/bind/named.conf.options
+chmod 0644 andromeda_backup/etc/bind/named.conf.options
+chown 109 andromeda_backup/etc/bind/rndc.key
+chgrp 115 andromeda_backup/etc/bind/rndc.key
+touch -c -d "2017-03-22 18:49:27.1228129610" andromeda_backup/etc/bind/rndc.key
+chmod 0640 andromeda_backup/etc/bind/rndc.key
+chown 0 andromeda_backup/etc/bind/zones.rfc1918
+chgrp 0 andromeda_backup/etc/bind/zones.rfc1918
+touch -c -d "2017-03-22 18:49:27.1228129610" andromeda_backup/etc/bind/zones.rfc1918
+chmod 0644 andromeda_backup/etc/bind/zones.rfc1918
+chown 0 andromeda_backup/etc/hostname
+chgrp 0 andromeda_backup/etc/hostname
+touch -c -d "2017-03-22 18:49:27.1228129610" andromeda_backup/etc/hostname
+chmod 0644 andromeda_backup/etc/hostname
+chown 0 andromeda_backup/etc/hosts
+chgrp 0 andromeda_backup/etc/hosts
+touch -c -d "2017-03-22 18:49:27.1228129610" andromeda_backup/etc/hosts
+chmod 0644 andromeda_backup/etc/hosts
+chown 0 andromeda_backup/etc/network/interfaces
+chgrp 0 andromeda_backup/etc/network/interfaces
+touch -c -d "2017-03-22 18:49:27.1228129610" andromeda_backup/etc/network/interfaces
+chmod 0644 andromeda_backup/etc/network/interfaces
+chown 0 andromeda_backup/etc/nginx/fastcgi_params
+chgrp 0 andromeda_backup/etc/nginx/fastcgi_params
+touch -c -d "2017-03-22 18:49:27.1228129610" andromeda_backup/etc/nginx/fastcgi_params
+chmod 0644 andromeda_backup/etc/nginx/fastcgi_params
+chown 0 andromeda_backup/etc/nginx/sites-available/baikal_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/baikal_conf
+touch -c -d "2017-03-22 18:49:27.1268129610" andromeda_backup/etc/nginx/sites-available/baikal_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/baikal_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/couchdb_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/couchdb_conf
+touch -c -d "2017-03-22 18:49:27.1268129610" andromeda_backup/etc/nginx/sites-available/couchdb_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/couchdb_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/default
+chgrp 0 andromeda_backup/etc/nginx/sites-available/default
+touch -c -d "2017-03-22 18:49:27.1268129610" andromeda_backup/etc/nginx/sites-available/default
+chmod 0644 andromeda_backup/etc/nginx/sites-available/default
+chown 0 andromeda_backup/etc/nginx/sites-available/klaus_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/klaus_conf
+touch -c -d "2017-03-22 18:49:27.1268129610" andromeda_backup/etc/nginx/sites-available/klaus_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/klaus_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/owncloud_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/owncloud_conf
+touch -c -d "2017-03-22 18:49:27.1268129610" andromeda_backup/etc/nginx/sites-available/owncloud_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/owncloud_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/owncloud_conf.bak
+chgrp 0 andromeda_backup/etc/nginx/sites-available/owncloud_conf.bak
+touch -c -d "2017-03-22 18:49:27.1268129610" andromeda_backup/etc/nginx/sites-available/owncloud_conf.bak
+chmod 0644 andromeda_backup/etc/nginx/sites-available/owncloud_conf.bak
+chown 0 andromeda_backup/etc/nginx/sites-available/pyload_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/pyload_conf
+touch -c -d "2017-03-22 18:49:27.1268129610" andromeda_backup/etc/nginx/sites-available/pyload_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/pyload_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/roundcube_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/roundcube_conf
+touch -c -d "2017-03-22 18:49:27.1268129610" andromeda_backup/etc/nginx/sites-available/roundcube_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/roundcube_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/seafile_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/seafile_conf
+touch -c -d "2017-03-22 18:49:27.1308129610" andromeda_backup/etc/nginx/sites-available/seafile_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/seafile_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/selfoss_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/selfoss_conf
+touch -c -d "2017-03-22 18:49:27.1308129610" andromeda_backup/etc/nginx/sites-available/selfoss_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/selfoss_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/syncFF_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/syncFF_conf
+touch -c -d "2017-03-22 18:49:27.1308129610" andromeda_backup/etc/nginx/sites-available/syncFF_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/syncFF_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/test_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/test_conf
+touch -c -d "2017-03-22 18:49:27.1308129610" andromeda_backup/etc/nginx/sites-available/test_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/test_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/transmission_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/transmission_conf
+touch -c -d "2017-03-22 18:49:27.1308129610" andromeda_backup/etc/nginx/sites-available/transmission_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/transmission_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/webmin_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/webmin_conf
+touch -c -d "2017-03-22 18:49:27.1308129610" andromeda_backup/etc/nginx/sites-available/webmin_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/webmin_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/website_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/website_conf
+touch -c -d "2017-03-22 18:49:27.1308129610" andromeda_backup/etc/nginx/sites-available/website_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/website_conf
+chown 0 andromeda_backup/etc/nginx/sites-available/wger_conf
+chgrp 0 andromeda_backup/etc/nginx/sites-available/wger_conf
+touch -c -d "2017-03-22 18:49:27.1308129610" andromeda_backup/etc/nginx/sites-available/wger_conf
+chmod 0644 andromeda_backup/etc/nginx/sites-available/wger_conf
+chown 0 andromeda_backup/etc/resolv.conf
+chgrp 0 andromeda_backup/etc/resolv.conf
+touch -c -d "2017-03-22 18:49:27.1348129610" andromeda_backup/etc/resolv.conf
+chmod 0644 andromeda_backup/etc/resolv.conf
+chown 0 andromeda_backup/etc/samba/configs/smb_andromeda.conf
+chgrp 0 andromeda_backup/etc/samba/configs/smb_andromeda.conf
+touch -c -d "2017-03-22 18:49:27.1348129610" andromeda_backup/etc/samba/configs/smb_andromeda.conf
+chmod 0644 andromeda_backup/etc/samba/configs/smb_andromeda.conf
+chown 1000 andromeda_backup/home/kelghar/.beets/config.yaml
+chgrp 1000 andromeda_backup/home/kelghar/.beets/config.yaml
+touch -c -d "2017-03-22 18:49:27.1348129610" andromeda_backup/home/kelghar/.beets/config.yaml
+chmod 0644 andromeda_backup/home/kelghar/.beets/config.yaml
+chown 0 andromeda_backup/home/kelghar/.dhcpd/dhcpd.conf
+chgrp 0 andromeda_backup/home/kelghar/.dhcpd/dhcpd.conf
+touch -c -d "2017-07-21 14:28:44.5839098770" andromeda_backup/home/kelghar/.dhcpd/dhcpd.conf
+chmod 0644 andromeda_backup/home/kelghar/.dhcpd/dhcpd.conf
+chown 1000 andromeda_backup/home/kelghar/.docker-mailserver/config/postfix-accounts.cf
+chgrp 1000 andromeda_backup/home/kelghar/.docker-mailserver/config/postfix-accounts.cf
+touch -c -d "2017-07-21 14:28:44.6359110560" andromeda_backup/home/kelghar/.docker-mailserver/config/postfix-accounts.cf
+chmod 0644 andromeda_backup/home/kelghar/.docker-mailserver/config/postfix-accounts.cf
+chown 2016 andromeda_backup/home/kelghar/.ffsync/syncserver.ini
+chgrp 2016 andromeda_backup/home/kelghar/.ffsync/syncserver.ini
+touch -c -d "2017-03-22 18:49:27.1348129610" andromeda_backup/home/kelghar/.ffsync/syncserver.ini
+chmod 0644 andromeda_backup/home/kelghar/.ffsync/syncserver.ini
+chown 1000 andromeda_backup/home/kelghar/.syncthing/config.xml
+chgrp 1000 andromeda_backup/home/kelghar/.syncthing/config.xml
+touch -c -d "2017-07-21 14:28:44.7319132330" andromeda_backup/home/kelghar/.syncthing/config.xml
+chmod 0600 andromeda_backup/home/kelghar/.syncthing/config.xml
+chown 1000 andromeda_backup/home/kelghar/.tmux.conf
+chgrp 1000 andromeda_backup/home/kelghar/.tmux.conf
+touch -c -d "2017-03-22 18:49:27.1348129610" andromeda_backup/home/kelghar/.tmux.conf
+chmod 0644 andromeda_backup/home/kelghar/.tmux.conf
+chown 1000 andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
+chgrp 1000 andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
+touch -c -d "2017-03-22 18:49:27.1388129610" andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
+chmod 0644 andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
+chown 1000 andromeda_backup/home/kelghar/.transmission/settings.json
+chgrp 1000 andromeda_backup/home/kelghar/.transmission/settings.json
+touch -c -d "2017-07-21 14:28:44.7799143210" andromeda_backup/home/kelghar/.transmission/settings.json
+chmod 0600 andromeda_backup/home/kelghar/.transmission/settings.json
+chown 1000 andromeda_backup/home/kelghar/.zshrc
+chgrp 1000 andromeda_backup/home/kelghar/.zshrc
+touch -c -d "2017-03-22 18:49:27.1388129610" andromeda_backup/home/kelghar/.zshrc
+chmod 0644 andromeda_backup/home/kelghar/.zshrc
+chown 1000 andromeda_backup/home/kelghar/tc_mount.sh
+chgrp 1000 andromeda_backup/home/kelghar/tc_mount.sh
+touch -c -d "2017-03-22 18:49:27.1388129610" andromeda_backup/home/kelghar/tc_mount.sh
+chmod 0644 andromeda_backup/home/kelghar/tc_mount.sh
+chown 33 andromeda_backup/var/www/selfoss/config.ini
+chgrp 33 andromeda_backup/var/www/selfoss/config.ini
+touch -c -d "2017-03-22 18:49:27.1388129610" andromeda_backup/var/www/selfoss/config.ini
+chmod 0644 andromeda_backup/var/www/selfoss/config.ini
 chown 1000 backup_config.sh
 chgrp 1000 backup_config.sh
-touch -c -d "2017-03-22 16:00:49.2266183200" backup_config.sh
+touch -c -d "2017-07-21 13:45:24.7534397700" backup_config.sh
 chmod 0755 backup_config.sh
 chown 1000 cert/create_cert_files.sh
 chgrp 1000 cert/create_cert_files.sh
@@ -80,7 +280,7 @@ touch -c -d "2017-03-22 14:11:07.3904917040" diverse_bash_scripts/get_colors_for
 chmod 0644 diverse_bash_scripts/get_colors_for_tmux.sh
 chown 1000 diverse_bash_scripts/git-cache-meta.sh
 chgrp 1000 diverse_bash_scripts/git-cache-meta.sh
-touch -c -d "2017-03-22 15:33:54.8985872650" diverse_bash_scripts/git-cache-meta.sh
+touch -c -d "2017-07-21 14:28:44.9279176780" diverse_bash_scripts/git-cache-meta.sh
 chmod 0755 diverse_bash_scripts/git-cache-meta.sh
 chown 1000 diverse_bash_scripts/pyloadExtractAndMove.sh
 chgrp 1000 diverse_bash_scripts/pyloadExtractAndMove.sh
@@ -136,7 +336,7 @@ touch -c -d "2017-03-22 14:11:07.3944917040" python_scripts/include_smb_config.p
 chmod 0644 python_scripts/include_smb_config.py
 chown 1000 python_scripts/pyload_extract.py
 chgrp 1000 python_scripts/pyload_extract.py
-touch -c -d "2017-03-22 14:11:07.3984917040" python_scripts/pyload_extract.py
+touch -c -d "2017-05-24 16:46:54.2791404150" python_scripts/pyload_extract.py
 chmod 0644 python_scripts/pyload_extract.py
 chown 1000 python_scripts/server.py
 chgrp 1000 python_scripts/server.py

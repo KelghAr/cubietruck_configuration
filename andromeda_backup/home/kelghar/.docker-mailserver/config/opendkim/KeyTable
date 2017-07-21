@@ -1,0 +1,1 @@
+mail._domainkey.mail.andromeda.home mail.andromeda.home:mail:/etc/opendkim/keys/mail.andromeda.home/mail.private

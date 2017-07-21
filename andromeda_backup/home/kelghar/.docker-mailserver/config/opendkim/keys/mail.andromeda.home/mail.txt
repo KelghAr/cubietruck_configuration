@@ -1,0 +1,2 @@
+mail._domainkey	IN	TXT	( "v=DKIM1; k=rsa; "
+	  "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC+0u+kHtquhfGCXpgV9odFpdx1I324WyZO8TtzOj5hUjWHAcNveVedAP2PSeVjmXTzYxwcVIC8VWk6UNQPfaLd7Fa3rlxMqYA1HH+R+B4VSypQTG2Sj8RFm01BLl/0tsed3mZUaWpy2ZJcowBxJds8W61obCJjDhoZxTYaizxKDwIDAQAB" )  ; ----- DKIM key mail for mail.andromeda.home
