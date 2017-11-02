@@ -1,0 +1,4 @@
+*
+!.gitignore
+!syncthing
+!config.xml

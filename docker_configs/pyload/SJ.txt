@@ -1,0 +1,2 @@
+(The.Blacklist|Hawaii.Five|Elementary|Supernatural|Sleepy.Hollow|Scorpion).*G(ERMAN|erman).*D(UBBED|ubbed)(\.DL){0,1}(?!(1080p|720p))\.(W|H|i|R|B)\w+\.(?!(1080P|720P))
+(Rick.and.Morty).*(\.DL){0,1}(?!(1080p|720p))\.(W|H|i|R|B)\w+\.(?!(1080P|720P))

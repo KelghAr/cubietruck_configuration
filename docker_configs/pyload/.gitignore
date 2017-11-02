@@ -1,0 +1,5 @@
+*
+!.gitignore
+!pyload
+!pyload.conf
+!SJ.txt
