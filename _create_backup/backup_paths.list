@@ -11,16 +11,8 @@
 /etc/resolv.conf
 /etc/aliases
 /home/kelghar/.tmux.conf
-/home/kelghar/.pyload/SJ.txt
-/home/kelghar/.pyload/unrar_passwords.txt
 /home/kelghar/.zshrc
 /home/kelghar/tc_mount.sh
 /home/kelghar/.tmuxinator/
 /home/kelghar/.vimrc
-/home/kelghar/.beets/config.yaml
-/home/kelghar/.dhcpd/dhcpd.conf
-/home/kelghar/.docker-mailserver/config/
-/home/kelghar/.ffsync/syncserver.ini
-/home/kelghar/.syncthing/config.xml
-/home/kelghar/.transmission/settings.json
 /var/www/selfoss/config.ini

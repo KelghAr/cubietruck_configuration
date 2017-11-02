@@ -31,8 +31,8 @@ cp san_domain_com.crt $NGINX_CERT_DIR/server.crt
 cp san_domain_com.key $NGINX_CERT_DIR/server.key
 
 echo "Copy to Postfix"
-cp san_domain_com.crt $POSTFIX_CERT_DIR/mail.andromeda.home.crt
-cp san_domain_com.key $POSTFIX_CERT_DIR/mail.andromeda.home.key
-cp cacert.pem $POSTFIX_CERT_DIR/mail.andromeda.home.ca
+#cp san_domain_com.crt $POSTFIX_CERT_DIR/mail.andromeda.home.crt
+#cp san_domain_com.key $POSTFIX_CERT_DIR/mail.andromeda.home.key
+#cp cacert.pem $POSTFIX_CERT_DIR/mail.andromeda.home.ca
 
 rm -r $WORKING_DIR
