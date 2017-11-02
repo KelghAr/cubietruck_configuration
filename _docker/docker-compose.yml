@@ -4,18 +4,18 @@ services:
     environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
     image: linuxserver/beets:latest
     ports: ['8337:8337']
-    volumes: ['/home/kelghar/.beets:/config', '/home/kelghar/mount_point/share/Musik:/music',
+    volumes: ['${DOCKER_CONFIG}/beets:/config', '/home/kelghar/mount_point/share/Musik:/music',
       '/home/kelghar/mount_point/share/Import_Musik:/downloads']
   dhcpd:
     image: joebiellik/dhcpd:latest
     network_mode: host
-    volumes: ['/home/kelghar/.dhcpd/:/etc/dhcp/']
+    volumes: ['${DOCKER_CONFIG}/dhcpd/:/etc/dhcp/']
   ffsync:
     container_name: ffsync
     environment: ['PUBLIC_URL=https://sync_ff.home/']
     image: sunx/mozilla-syncserver:latest
     ports: ['5050:5000']
-    volumes: ['/home/kelghar/.ffsync:/home/ffsync']
+    volumes: ['${DOCKER_CONFIG}/ffsync:/home/ffsync']
   mail:
     container_name: mail
     domainname: andromeda.home
@@ -24,36 +24,36 @@ services:
     image: tvial/docker-mailserver:latest
     ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
     volumes: ['/home/kelghar/.docker-mailserver/maildata:/var/mail', '/home/kelghar/.docker-mailserver/mailstate:/var/mail-state',
-      '/home/kelghar/.docker-mailserver/config/:/tmp/docker-mailserver/']
+      '${DOCKER_CONFIG}/mailserver:/tmp/docker-mailserver/']
   photato:
     container_name: photato
     image: trebonius0/photato:latest
     ports: ['8186:8186']
-    volumes: ['${PHOTATO_CONFIG}/.photato:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder/import:/pictures',
+    volumes: ['${DOCKER_CONFIG}/photato:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder/import:/pictures',
       '/home/kelghar/mount_point/share/_syncthing/Bilder/cache:/cache']
   pyload:
     container_name: pyload
     environment: [DOCKUID=1000, DOCKGID=1000]
     image: digrouz/docker-alp-pyload:latest
     ports: ['7227:7227', '8765:8000', '9666:9666']
-    volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '/home/kelghar/.pyload/config:/config',
+    volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config',
       '/etc/localtime:/etc/localtime:ro']
   radicale:
     container_name: radicale
     image: rdissertori/docker-radicale
     ports: ['5232:5232']
-    volumes: ['/home/kelghar/.radicale:/data/radicale']
+    volumes: ['${DOCKER_CONFIG}/radicale:/data/radicale']
   syncthing:
     container_name: syncthing
     environment: [PGID=1000, PUID=1000]
     image: linuxserver/syncthing:latest
     ports: ['8384:8384', '22000:22000', '21027:21027/udp']
-    volumes: ['/home/kelghar/.syncthing:/config', '/home/kelghar/mount_point/share/_syncthing:/sync']
+    volumes: ['${DOCKER_CONFIG}/syncthing:/config', '/home/kelghar/mount_point/share/_syncthing:/sync']
   transmission:
     container_name: transmission
     environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
     image: linuxserver/transmission:latest
     ports: ['9091:9091', '51413:51413', '51413:51413/udp']
-    volumes: ['/home/kelghar/.transmission:/config', '/home/kelghar/mount_point/share/_transmission/incoming:/downloads',
+    volumes: ['${DOCKER_CONFIG}/transmission:/config', '/home/kelghar/mount_point/share/_transmission/incoming:/downloads',
       '/home/kelghar/mount_point/share/_transmission/watch:/watch']
 version: '3.0'
