@@ -1,8 +1,0 @@
-server{
-listen 4242;
-
-location / {
-    root /var/www/website;
-    index HomeWebsite.html;
-}
-}

@@ -25,7 +25,6 @@ webmin			IN	CNAME	home.
 baikal			IN	CNAME	home.
 sync_ff			IN	CNAME	home.
 mail.andromeda		IN      CNAME   home.
-owncloud.andromeda      IN      CNAME   home.
+photato.andromeda       IN      CNAME   home.
 selfoss.andromeda       IN      CNAME   home.
-wger.andromeda		IN	CNAME	home.
-klaus.andromeda         IN      CNAME   home.
+syncthing.andromeda     IN	CNAME	home.
