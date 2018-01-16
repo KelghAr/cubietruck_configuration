@@ -31,6 +31,11 @@ services:
     ports: ['8186:8186']
     volumes: ['${DOCKER_CONFIG}/photato:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder/import:/pictures',
       '/home/kelghar/mount_point/share/_syncthing/Bilder/cache:/cache']
+  portainer:
+    container_name: portainer
+    image: portainer/portainer
+    ports: 9000:9000
+    volumes: ['/var/run/docker.sock:/var/run/docker.sock', '/opt/portainer/data:/home/kelghar/.portainer']
   pyload:
     container_name: pyload
     environment: [DOCKUID=1000, DOCKGID=1000]
