@@ -1,7 +1,6 @@
 [server]
-base_prefix = /
-can_skip_base_prefix = False
 dns_lookup = True
+hosts = 0.0.0.0:5232
 
 [encoding]
 request = utf-8
@@ -15,14 +14,7 @@ htpasswd_filename = /data/radicale/passwd
 # Value: plain | sha1 | ssha | crypt | bcrypt | md5
 htpasswd_encryption = plain
 
-[rights]
-# Value: None | authenticated | owner_only | owner_write | from_file | custom
-type = from_file
-# File for rights management from_file
-file = /data/radicale/rights
-
 [storage]
-# Value: filesystem | multifilesystem | database | custom
-type = filesystem
+type = multifilesystem
 # Folder for storing local collections, created if not present
 filesystem_folder = /data/radicale/collections
