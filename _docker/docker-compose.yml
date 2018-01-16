@@ -34,8 +34,8 @@ services:
   portainer:
     container_name: portainer
     image: portainer/portainer
-    ports: 9000:9000
-    volumes: ['/var/run/docker.sock:/var/run/docker.sock', '/opt/portainer/data:/home/kelghar/.portainer']
+    ports: ['9000:9000']
+    volumes: ['/var/run/docker.sock:/var/run/docker.sock', '/home/kelghar/.portainer:/data']
   pyload:
     container_name: pyload
     environment: [DOCKUID=1000, DOCKGID=1000]
