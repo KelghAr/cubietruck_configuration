@@ -1,0 +1,35 @@
+ @startuml
+cloud ".home network" as HomeNet
+
+cloud "docker bridge network" as BridgeNet {
+node "Nginx" as nginx
+node "mail" as BN1
+node "beets" as BN2
+node "dhcp" as BN3
+node "watchtower" as BN4
+}
+ 
+node "Docker Network Router" as DockerRouter 
+ 
+nginx -down- DockerRouter
+ 
+cloud "service network" as InternalNet {
+node "radicale" as N1
+node "pyload" as N2
+node "transmission" as N3
+node "ffsync" as N4
+node "syncthing" as N5
+node "photato" as N6
+node "portainer" as N7
+}
+
+DockerRouter -- N1
+DockerRouter -- N2
+DockerRouter -- N3
+DockerRouter -- N4
+DockerRouter -- N5
+DockerRouter -- N6
+DockerRouter -- N7
+
+HomeNet -- BridgeNet
+@enduml
