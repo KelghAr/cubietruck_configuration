@@ -8,6 +8,7 @@ services:
       '/home/kelghar/mount_point/share/Import_Musik:/downloads']
   dhcpd:
     image: joebiellik/dhcpd:latest
+    container_name: dhcpd
     network_mode: host
     volumes: ['${DOCKER_CONFIG}/dhcpd/:/etc/dhcp/']
   ffsync:
