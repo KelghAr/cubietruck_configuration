@@ -7,8 +7,8 @@ services:
     volumes: ['${DOCKER_CONFIG}/beets:/config', '/home/kelghar/mount_point/share/Musik:/music',
       '/home/kelghar/mount_point/share/Import_Musik:/downloads']
   dhcpd:
-    image: joebiellik/dhcpd:latest
     container_name: dhcpd
+    image: joebiellik/dhcpd:latest
     network_mode: host
     volumes: ['${DOCKER_CONFIG}/dhcpd/:/etc/dhcp/']
   ffsync:
@@ -26,6 +26,19 @@ services:
     ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
     volumes: ['/home/kelghar/.docker-mailserver/maildata:/var/mail', '/home/kelghar/.docker-mailserver/mailstate:/var/mail-state',
       '${DOCKER_CONFIG}/mailserver:/tmp/docker-mailserver/']
+  paperless-consumer:
+    build: danielquinn/paperless
+    command: [document_consumer]
+    volumes: ['/home/kelghar/mount_point/share/_nunu/data:/usr/src/paperless/data',
+      '/home/kelghar/mount_point/share/_nunu/media:/usr/src/paperless/media', '/home/kelghar/mount_point/share/_nunu/consume:/consume',
+      '/home/kelghar/mount_point/share/_nunu/export:/export']
+  paperless-webserver:
+    build: danielquinn/paperless
+    command: [runserver, --insecure, '0.0.0.0:8000']
+    environment: [PAPERLESS_OCR_LANGUAGES=]
+    ports: ['8901:8000']
+    volumes: ['/home/kelghar/mount_point/share/_nunu/data:/usr/src/paperless/data',
+      '/home/kelghar/mount_point/share/_nunu/media:/usr/src/paperless/media']
   photato:
     container_name: photato
     image: trebonius0/photato:latest
