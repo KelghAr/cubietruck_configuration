@@ -22,23 +22,10 @@ services:
     domainname: andromeda.home
     environment: [ENABLE_SPAMASSASSIN=1, ENABLE_CLAMAV=1, ENABLE_MANAGESIEVE=1, ONE_DIR=1]
     hostname: mail
-    image: tvial/docker-mailserver:latest
+    image: tvial/docker-mailserver:2.3
     ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
     volumes: ['/home/kelghar/.docker-mailserver/maildata:/var/mail', '/home/kelghar/.docker-mailserver/mailstate:/var/mail-state',
       '${DOCKER_CONFIG}/mailserver:/tmp/docker-mailserver/']
-  paperless-consumer:
-    build: danielquinn/paperless
-    command: [document_consumer]
-    volumes: ['/home/kelghar/mount_point/share/_nunu/data:/usr/src/paperless/data',
-      '/home/kelghar/mount_point/share/_nunu/media:/usr/src/paperless/media', '/home/kelghar/mount_point/share/_nunu/consume:/consume',
-      '/home/kelghar/mount_point/share/_nunu/export:/export']
-  paperless-webserver:
-    build: danielquinn/paperless
-    command: [runserver, --insecure, '0.0.0.0:8000']
-    environment: [PAPERLESS_OCR_LANGUAGES=]
-    ports: ['8901:8000']
-    volumes: ['/home/kelghar/mount_point/share/_nunu/data:/usr/src/paperless/data',
-      '/home/kelghar/mount_point/share/_nunu/media:/usr/src/paperless/media']
   photato:
     container_name: photato
     image: trebonius0/photato:latest
