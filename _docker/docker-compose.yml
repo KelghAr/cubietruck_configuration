@@ -32,6 +32,12 @@ services:
     ports: ['8186:8186']
     volumes: ['${DOCKER_CONFIG}/photato:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder/import:/pictures',
       '/home/kelghar/mount_point/share/_syncthing/Bilder/cache:/cache']
+  piwigo:
+    container_name: piwigo
+    environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
+    image: linuxserver/piwigo:latest
+    ports: ['8888:80']
+    volumes: ['${DOCKER_CONFIG}/piwigo:/config']
   portainer:
     container_name: portainer
     image: portainer/portainer
@@ -63,8 +69,8 @@ services:
     volumes: ['${DOCKER_CONFIG}/transmission:/config', '/home/kelghar/mount_point/share/_transmission/incoming:/downloads',
       '/home/kelghar/mount_point/share/_transmission/watch:/watch']
   watchtower:
+    command: --cleanup --schedule "0 23 * * *"
     container_name: watchtower
     image: v2tec/watchtower
     volumes: ['/var/run/docker.sock:/var/run/docker.sock']
-    command: --cleanup --schedule "0 23 * * *"
 version: '3.0'
