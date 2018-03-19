@@ -12,6 +12,7 @@ services:
     volumes: ['/var/run/docker.sock:/var/run/docker.sock', '/home/kelghar/.portainer:/data']
   pyload:
     container_name: pyload
+    depends_on: [traefik]
     environment: ['DOCKUID=${USERMAP_UID}', 'DOCKGID=${USERMAP_GID}']
     image: digrouz/docker-alp-pyload:latest
     labels: [traefik.backend=pyload, 'traefik.frontend.rule=Host:pyload.${TRAEFIK_DOMAIN}',
