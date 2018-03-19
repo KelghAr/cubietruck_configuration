@@ -11,16 +11,16 @@ services:
     networks: [webgateway]
     ports: ['5050:5000']
     volumes: ['${DOCKER_CONFIG}/ffsync:/home/ffsync']
-  photato:
-    container_name: photato
+  piwigo:
+    container_name: piwigo
     depends_on: [traefik]
-    image: trebonius0/photato:latest
-    labels: [traefik.backend=photato, 'traefik.frontend.rule=Host:photato.${TRAEFIK_DOMAIN}',
-      traefik.enable=true, traefik.port=8186]
+    environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
+    image: linuxserver/piwigo:latest
+    labels: [traefik.backend=piwigo, 'traefik.frontend.rule=Host:piwigo.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=80]
     networks: [webgateway]
-    ports: ['8186:8186']
-    volumes: ['${DOCKER_CONFIG}/photato:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder/import:/pictures',
-      '/home/kelghar/mount_point/share/_syncthing/Bilder/cache:/cache']
+    ports: ['8888:80']
+    volumes: ['${DOCKER_CONFIG}/piwigo:/config']
   portainer:
     container_name: portainer
     depends_on: [traefik]
@@ -41,6 +41,25 @@ services:
     ports: ['7227:7227', '8765:8000', '9666:9666']
     volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config',
       '/etc/localtime:/etc/localtime:ro']
+  radicale:
+    container_name: radicale
+    depends_on: [traefik]
+    image: rdissertori/docker-radicale
+    labels: [traefik.backend=radicale, 'traefik.frontend.rule=Host:radicale.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=5232]
+    networks: [webgateway]
+    ports: ['5232:5232']
+    volumes: ['${DOCKER_CONFIG}/radicale:/data/radicale']
+  syncthing:
+    container_name: syncthing
+    depends_on: [traefik]
+    environment: ['PUID=${USERMAP_UID}', 'PGID=${USERMAP_GID}']
+    image: linuxserver/syncthing:latest
+    labels: [traefik.backend=syncthing, 'traefik.frontend.rule=Host:syncthing.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8384]
+    networks: [webgateway]
+    ports: ['8384:8384', '22000:22000', '21027:21027/udp']
+    volumes: ['${DOCKER_CONFIG}/syncthing:/config', '/home/kelghar/mount_point/share/_syncthing:/sync']
   traefik:
     command: --api --docker --docker.domain=${TRAEFIK_DOMAIN} --logLevel=ERROR
     container_name: traefik
@@ -49,4 +68,15 @@ services:
     ports: ['80:80', '443:443', '8080:8080']
     volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml', '${DOCKER_CONFIG}/traefik/acme.json:/acme.json',
       '/var/run/docker.sock:/var/run/docker.sock']
+  transmission:
+    container_name: transmission
+    depends_on: [traefik]
+    environment: [TZ=Europe/Berlin, 'PUID=${USERMAP_UID}', 'PGID=${USERMAP_GID}']
+    image: linuxserver/transmission:latest
+    labels: [traefik.backend=transmission, 'traefik.frontend.rule=Host:transmission.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=9091]
+    networks: [webgateway]
+    ports: ['9091:9091', '51413:51413', '51413:51413/udp']
+    volumes: ['${DOCKER_CONFIG}/transmission:/config', '/home/kelghar/mount_point/share/_transmission/incoming:/downloads',
+      '/home/kelghar/mount_point/share/_transmission/watch:/watch']
 version: '3.0'
