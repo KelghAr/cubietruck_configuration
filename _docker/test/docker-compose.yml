@@ -16,13 +16,13 @@ services:
     environment: ['DOCKUID=${USERMAP_UID}', 'DOCKGID=${USERMAP_GID}']
     image: digrouz/docker-alp-pyload:latest
     labels: [traefik.backend=pyload, 'traefik.frontend.rule=Host:pyload.${TRAEFIK_DOMAIN}',
-      traefik.enable=true, traefik.port=8765]
+      traefik.enable=true, traefik.port=8000]
     networks: [webgateway]
     ports: ['7227:7227', '8765:8000', '9666:9666']
     volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config',
       '/etc/localtime:/etc/localtime:ro']
   traefik:
-    command: --api --docker --docker.domain=${TRAEFIK_DOMAIN} --logLevel=DEBUG
+    command: --api --docker --docker.domain=${TRAEFIK_DOMAIN} --logLevel=ERROR
     container_name: traefik
     image: traefik:alpine
     networks: [webgateway]
