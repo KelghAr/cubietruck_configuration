@@ -10,12 +10,22 @@ services:
     networks: [webgateway]
     ports: ['9000:9000']
     volumes: ['/var/run/docker.sock:/var/run/docker.sock', '/home/kelghar/.portainer:/data']
+  pyload:
+    container_name: pyload
+    environment: ['DOCKUID=${USERMAP_UID}', 'DOCKGID=${USERMAP_GID}']
+    image: digrouz/docker-alp-pyload:latest
+    labels: [traefik.backend=pyload, 'traefik.frontend.rule=Host:pyload.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8765]
+    networks: [webgateway]
+    ports: ['7227:7227', '8765:8000', '9666:9666']
+    volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config',
+      '/etc/localtime:/etc/localtime:ro']
   traefik:
     command: --api --docker --docker.domain=${TRAEFIK_DOMAIN} --logLevel=DEBUG
     container_name: traefik
     image: traefik:alpine
     networks: [webgateway]
     ports: ['80:80', '443:443', '8080:8080']
-    volumes: ['${DOCKER_CONFIG}/traefik.toml:/traefik.toml', '${DOCKER_CONFIG}/acme.json:/acme.json',
+    volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml', '${DOCKER_CONFIG}/traefik/acme.json:/acme.json',
       '/var/run/docker.sock:/var/run/docker.sock']
 version: '3.0'
