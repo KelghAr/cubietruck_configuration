@@ -3,6 +3,7 @@ networks:
 services:
   portainer:
     container_name: portainer
+    depends_on: [traefik]
     image: portainer/portainer
     labels: [traefik.backend=portainer, 'traefik.frontend.rule=Host:portainer.docker.localhost',
       traefik.enable=true, traefik.port=8080]
