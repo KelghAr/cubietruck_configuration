@@ -1,6 +1,16 @@
 networks:
   webgateway: {driver: bridge}
 services:
+  ffsync:
+    container_name: ffsync
+    depends_on: [traefik]
+    environment: ['PUBLIC_URL=https://sync_ff.andromeda.home/']
+    image: sunx/mozilla-syncserver:latest
+    labels: [traefik.backend=ffsync, 'traefik.frontend.rule=Host:ffsync.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=5000]
+    networks: [webgateway]
+    ports: ['5050:5000']
+    volumes: ['${DOCKER_CONFIG}/ffsync:/home/ffsync']
   portainer:
     container_name: portainer
     depends_on: [traefik]
