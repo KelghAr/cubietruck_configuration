@@ -6,11 +6,21 @@ services:
     depends_on: [traefik]
     environment: ['PUBLIC_URL=https://sync_ff.andromeda.home/']
     image: sunx/mozilla-syncserver:latest
-    labels: [traefik.backend=ffsync, 'traefik.frontend.rule=Host:ffsync.${TRAEFIK_DOMAIN}',
+    labels: [traefik.backend=sync_ff, 'traefik.frontend.rule=Host:sync_ff.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=5000]
     networks: [webgateway]
     ports: ['5050:5000']
     volumes: ['${DOCKER_CONFIG}/ffsync:/home/ffsync']
+  photato:
+    container_name: photato
+    depends_on: [traefik]
+    image: trebonius0/photato:latest
+    labels: [traefik.backend=photato, 'traefik.frontend.rule=Host:photato.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8186]
+    networks: [webgateway]
+    ports: ['8186:8186']
+    volumes: ['${DOCKER_CONFIG}/photato:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder/import:/pictures',
+      '/home/kelghar/mount_point/share/_syncthing/Bilder/cache:/cache']
   portainer:
     container_name: portainer
     depends_on: [traefik]
