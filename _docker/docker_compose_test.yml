@@ -1,0 +1,12 @@
+networks:
+  webgateway: {driver: bridge}
+services:
+  traefik:
+    command: --api --docker --docker.domain=docker.localhost --logLevel=DEBUG
+    container_name: traefik
+    image: traefik:alpine
+    networks: [webgateway]
+    ports: ['80:80', '443:443', '8080:8080']
+    volumes: ['${DOCKER_CONFIG}/traefik.toml:/traefik.toml', '${DOCKER_CONFIG}/acme.json:/acme.json',
+      '/var/run/docker.sock:/var/run/docker.sock']
+version: '3.0'
