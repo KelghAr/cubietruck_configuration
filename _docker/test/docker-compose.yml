@@ -66,7 +66,7 @@ services:
     image: traefik:alpine
     networks: [webgateway]
     ports: ['80:80', '443:443', '8080:8080']
-    volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml', '${DOCKER_CONFIG}/traefik/acme.json:/acme.json',
+    volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml:ro', '${DOCKER_CONFIG}/traefik/acme:/etc/traefik/acme',
       '/var/run/docker.sock:/var/run/docker.sock']
   transmission:
     container_name: transmission

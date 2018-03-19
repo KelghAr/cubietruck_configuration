@@ -64,8 +64,8 @@ exposedbydefault = false
 watch = true
 
 [acme]
-email = "kelghar@mail.andromeda.home"
-storage = "acme.json"
+email = "kai.letsencrypt@gmail.com"
+storage = "/etc/traefik/acme/acme.json"
 entryPoint = "https"
 OnHostRule = true
 [acme.httpChallenge]
