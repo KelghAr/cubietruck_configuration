@@ -24,20 +24,8 @@ defaultEntryPoints = ["http", "https"]
 
 # Enable API and dashboard
 [api]
-
-  # Name of the related entry point
-  #
-  # Optional
-  # Default: "traefik"
-  #
-  # entryPoint = "traefik"
-
-  # Enabled Dashboard
-  #
-  # Optional
-  # Default: true
-  #
-  # dashboard = false
+entryPoint = "traefik"
+dashboard = true
 
 ################################################################
 # Ping configuration
