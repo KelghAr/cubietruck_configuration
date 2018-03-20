@@ -1,11 +1,6 @@
 networks:
   webgateway: {driver: bridge}
 services:
-  dhcpd:
-    container_name: dhcpd
-    image: joebiellik/dhcpd:latest
-    network_mode: host
-    volumes: ['${DOCKER_CONFIG}/dhcpd/:/etc/dhcp/']
   dnsmasq:
     container_name: dnsmasq
     environment: [HTTP_USER=kelghar, HTTP_PASS=Bigfoot]
@@ -29,9 +24,9 @@ services:
     environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
     image: linuxserver/piwigo:latest
     labels: [traefik.backend=piwigo, 'traefik.frontend.rule=Host:piwigo.${TRAEFIK_DOMAIN}',
-      traefik.enable=true, traefik.port=80]
+      traefik.enable=true, traefik.port=8760]
     networks: [webgateway]
-    ports: ['80:80']
+    ports: ['8760:80']
     volumes: ['${DOCKER_CONFIG}/piwigo:/config']
   portainer:
     container_name: portainer
@@ -77,9 +72,8 @@ services:
     container_name: traefik
     image: traefik:alpine
     networks: [webgateway]
-    ports: ['80:80', '443:443', '8080:8080']
-    volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml:ro', '${DOCKER_CONFIG}/traefik/acme:/etc/traefik/acme',
-      '/var/run/docker.sock:/var/run/docker.sock']
+    ports: ['80:80', '443:443', '8081:8080']
+    volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml:ro', '/var/run/docker.sock:/var/run/docker.sock', '${DOCKER_CONFIG}/traefik/certs:/certs']
   transmission:
     container_name: transmission
     depends_on: [traefik]

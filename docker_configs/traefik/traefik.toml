@@ -21,7 +21,9 @@ defaultEntryPoints = ["http", "https"]
   [entryPoints.https]
   address = ":443"
   [entryPoints.https.tls]
-
+    [[entryPoints.https.tls.certificates]]
+      certFile = "/certs/server.crt"
+      keyFile = "/certs/server.key"
 # Enable API and dashboard
 [api]
 entryPoint = "traefik"
@@ -51,10 +53,10 @@ endpoint = "unix:///var/run/docker.sock"
 exposedbydefault = false
 watch = true
 
-[acme]
-email = "kai.letsencrypt@gmail.com"
-storage = "/etc/traefik/acme/acme.json"
-entryPoint = "https"
-OnHostRule = true
-[acme.httpChallenge]
-entryPoint = "http"
+#[acme]
+#email = "kai.letsencrypt@gmail.com"
+#storage = "/etc/traefik/acme/acme.json"
+#entryPoint = "https"
+#onHostRule = true
+#[acme.httpChallenge]
+#entryPoint = "http"
