@@ -1,81 +1,88 @@
+networks:
+  webgateway: {driver: bridge}
 services:
-  beets:
-    container_name: beets
-    environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
-    image: linuxserver/beets:latest
-    ports: ['8337:8337']
-    volumes: ['${DOCKER_CONFIG}/beets:/config', '/home/kelghar/mount_point/share/Musik:/music',
-      '/home/kelghar/mount_point/share/Import_Musik:/downloads']
-  dhcpd:
-    container_name: dhcpd
-    image: joebiellik/dhcpd:latest
+  dnsmasq:
+    container_name: dnsmasq
+    environment: [HTTP_USER=kelghar, HTTP_PASS=Bigfoot]
+    image: jpillora/dnsmasq:latest
     network_mode: host
-    volumes: ['${DOCKER_CONFIG}/dhcpd/:/etc/dhcp/']
+    ports: ['5380:5380', '53:53/udp']
+    volumes: ['${DOCKER_CONFIG}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf', '${DOCKER_CONFIG}/dnsmasq/hosts:/etc/hosts']
   ffsync:
     container_name: ffsync
-    environment: ['PUBLIC_URL=https://sync_ff.home/']
+    depends_on: [traefik]
+    environment: ['PUBLIC_URL=https://sync_ff.andromeda.home/']
     image: sunx/mozilla-syncserver:latest
-    ports: ['5050:5000']
+    labels: [traefik.backend=sync_ff, 'traefik.frontend.rule=Host:sync_ff.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=5000]
+    networks: [webgateway]
+    ports: ['5000:5000']
     volumes: ['${DOCKER_CONFIG}/ffsync:/home/ffsync']
-  mail:
-    container_name: mail
-    domainname: andromeda.home
-    environment: [ENABLE_SPAMASSASSIN=1, ENABLE_CLAMAV=1, ENABLE_MANAGESIEVE=1, ONE_DIR=1]
-    hostname: mail
-    image: tvial/docker-mailserver:2.3
-    ports: ['25:25', '143:143', '587:587', '993:993', '4190:4190']
-    volumes: ['/home/kelghar/.docker-mailserver/maildata:/var/mail', '/home/kelghar/.docker-mailserver/mailstate:/var/mail-state',
-      '${DOCKER_CONFIG}/mailserver:/tmp/docker-mailserver/']
-  photato:
-    container_name: photato
-    image: trebonius0/photato:latest
-    ports: ['8186:8186']
-    volumes: ['${DOCKER_CONFIG}/photato:/config', '/home/kelghar/mount_point/share/_syncthing/Bilder/import:/pictures',
-      '/home/kelghar/mount_point/share/_syncthing/Bilder/cache:/cache']
   piwigo:
     container_name: piwigo
+    depends_on: [traefik]
     environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
     image: linuxserver/piwigo:latest
-    ports: ['8888:80']
+    labels: [traefik.backend=piwigo, 'traefik.frontend.rule=Host:piwigo.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8760]
+    networks: [webgateway]
+    ports: ['8760:80']
     volumes: ['${DOCKER_CONFIG}/piwigo:/config']
   portainer:
     container_name: portainer
+    depends_on: [traefik]
     image: portainer/portainer
+    labels: [traefik.backend=portainer, 'traefik.frontend.rule=Host:portainer.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=9000]
+    networks: [webgateway]
     ports: ['9000:9000']
     volumes: ['/var/run/docker.sock:/var/run/docker.sock', '/home/kelghar/.portainer:/data']
   pyload:
     container_name: pyload
-    environment: [DOCKUID=1000, DOCKGID=1000]
+    depends_on: [traefik]
+    environment: ['DOCKUID=${USERMAP_UID}', 'DOCKGID=${USERMAP_GID}']
     image: digrouz/docker-alp-pyload:latest
-    ports: ['7227:7227', '8765:8000', '9666:9666']
+    labels: [traefik.backend=pyload, 'traefik.frontend.rule=Host:pyload.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8000]
+    networks: [webgateway]
+    ports: ['7227:7227', '8000:8000', '9666:9666']
     volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config',
       '/etc/localtime:/etc/localtime:ro']
   radicale:
     container_name: radicale
+    depends_on: [traefik]
     image: rdissertori/docker-radicale
+    labels: [traefik.backend=radicale, 'traefik.frontend.rule=Host:radicale.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=5232]
+    networks: [webgateway]
     ports: ['5232:5232']
     volumes: ['${DOCKER_CONFIG}/radicale:/data/radicale']
   syncthing:
     container_name: syncthing
-    environment: [PGID=1000, PUID=1000]
+    depends_on: [traefik]
+    environment: ['PUID=${USERMAP_UID}', 'PGID=${USERMAP_GID}']
     image: linuxserver/syncthing:latest
+    labels: [traefik.backend=syncthing, 'traefik.frontend.rule=Host:syncthing.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8384]
+    networks: [webgateway]
     ports: ['8384:8384', '22000:22000', '21027:21027/udp']
     volumes: ['${DOCKER_CONFIG}/syncthing:/config', '/home/kelghar/mount_point/share/_syncthing:/sync']
+  traefik:
+    command: --api --docker --docker.domain=${TRAEFIK_DOMAIN} --logLevel=ERROR
+    container_name: traefik
+    image: traefik:alpine
+    networks: [webgateway]
+    ports: ['80:80', '443:443', '8081:8080']
+    volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml:ro', '/var/run/docker.sock:/var/run/docker.sock', '${DOCKER_CONFIG}/traefik/certs:/certs']
   transmission:
     container_name: transmission
-    environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
+    depends_on: [traefik]
+    environment: [TZ=Europe/Berlin, 'PUID=${USERMAP_UID}', 'PGID=${USERMAP_GID}']
     image: linuxserver/transmission:latest
+    labels: [traefik.backend=transmission, 'traefik.frontend.rule=Host:transmission.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=9091]
+    networks: [webgateway]
     ports: ['9091:9091', '51413:51413', '51413:51413/udp']
     volumes: ['${DOCKER_CONFIG}/transmission:/config', '/home/kelghar/mount_point/share/_transmission/incoming:/downloads',
       '/home/kelghar/mount_point/share/_transmission/watch:/watch']
-  watchtower:
-    command: --cleanup --schedule "0 23 * * *"
-    container_name: watchtower
-    image: v2tec/watchtower
-    volumes: ['/var/run/docker.sock:/var/run/docker.sock']
-  rainloop:
-    container_name: rainloop
-    image: solidnerd/rainloop:1.10.5.192
-    volumes: ['${DOCKER_CONFIG}/rainloop/data:/var/www/rainloop/data']
-    ports: ['5656:80']
 version: '3.0'
