@@ -12,7 +12,7 @@ services:
     image: jpillora/dnsmasq:latest
     network_mode: host
     ports: ['5380:5380', '53:53/udp']
-    volumes: ['${DOCKER_CONFIG}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf', '${DOCKER_CONFIG}/dnsmasq/resolv.conf:/etc/resolv.conf']
+    volumes: ['${DOCKER_CONFIG}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf', '${DOCKER_CONFIG}/dnsmasq/hosts:/etc/hosts']
   ffsync:
     container_name: ffsync
     depends_on: [traefik]
