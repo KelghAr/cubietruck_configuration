@@ -6,8 +6,8 @@ services:
     environment: [HTTP_USER=kelghar, HTTP_PASS=Bigfoot]
     image: jpillora/dnsmasq:latest
     network_mode: host
-    privileged: true
     ports: ['5380:5380', '53:53/udp', '67:67/udp']
+    privileged: true
     volumes: ['${DOCKER_CONFIG}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf', '${DOCKER_CONFIG}/dnsmasq/hosts:/etc/hosts']
   ffsync:
     container_name: ffsync
@@ -58,6 +58,16 @@ services:
     networks: [webgateway]
     ports: ['5232:5232']
     volumes: ['${DOCKER_CONFIG}/radicale:/data/radicale']
+  selfoss:
+    container_name: selfoss
+    depends_on: [traefik]
+    environment: ['UID=${USERMAP_UID}', 'GID=${USERMAP_GID}', CRON_PERIOD=15m]
+    image: hardware/selfoss
+    labels: [traefik.backend=selfoss, 'traefik.frontend.rule=Host:selfoss.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8888]
+    networks: [webgateway]
+    ports: ['8888:8888']
+    volumes: ['${DOCKER_CONFIG}/selfoss:/selfoss/data']
   syncthing:
     container_name: syncthing
     depends_on: [traefik]
@@ -74,7 +84,8 @@ services:
     image: traefik:alpine
     networks: [webgateway]
     ports: ['80:80', '443:443', '8081:8080']
-    volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml:ro', '/var/run/docker.sock:/var/run/docker.sock', '${DOCKER_CONFIG}/traefik/certs:/certs']
+    volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml:ro', '/var/run/docker.sock:/var/run/docker.sock',
+      '${DOCKER_CONFIG}/traefik/certs:/certs']
   transmission:
     container_name: transmission
     depends_on: [traefik]
