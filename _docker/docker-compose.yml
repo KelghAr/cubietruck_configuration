@@ -12,6 +12,7 @@ services:
   ffsync:
     container_name: ffsync
     depends_on: [traefik]
+    dns: [8.8.8.8]
     environment: ['PUBLIC_URL=https://sync_ff.andromeda.home/']
     image: sunx/mozilla-syncserver:latest
     labels: [traefik.backend=sync_ff, 'traefik.frontend.rule=Host:sync_ff.${TRAEFIK_DOMAIN}',
@@ -19,8 +20,6 @@ services:
     networks: [webgateway]
     ports: ['5000:5000']
     volumes: ['${DOCKER_CONFIG}/ffsync:/home/ffsync']
-    dns:
-        - 8.8.8.8
   piwigo:
     container_name: piwigo
     depends_on: [traefik]
@@ -62,8 +61,8 @@ services:
     volumes: ['${DOCKER_CONFIG}/radicale:/data/radicale']
   selfoss:
     container_name: selfoss
-    #network_mode: host
     depends_on: [traefik]
+    dns: [8.8.8.8]
     environment: ['UID=${USERMAP_UID}', 'GID=${USERMAP_GID}', CRON_PERIOD=15m]
     image: hardware/selfoss
     labels: [traefik.backend=selfoss, 'traefik.frontend.rule=Host:selfoss.${TRAEFIK_DOMAIN}',
@@ -71,8 +70,6 @@ services:
     networks: [webgateway]
     ports: ['8888:8888']
     volumes: ['${DOCKER_CONFIG}/selfoss:/selfoss/data']
-    dns:
-        - 8.8.8.8
   syncthing:
     container_name: syncthing
     depends_on: [traefik]
