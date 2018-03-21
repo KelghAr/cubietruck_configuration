@@ -6,7 +6,8 @@ services:
     environment: [HTTP_USER=kelghar, HTTP_PASS=Bigfoot]
     image: jpillora/dnsmasq:latest
     network_mode: host
-    ports: ['5380:5380', '53:53/udp']
+    privileged: true
+    ports: ['5380:5380', '53:53/udp', '67:67/udp']
     volumes: ['${DOCKER_CONFIG}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf', '${DOCKER_CONFIG}/dnsmasq/hosts:/etc/hosts']
   ffsync:
     container_name: ffsync
