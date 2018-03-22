@@ -26,7 +26,7 @@ services:
     environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
     image: linuxserver/piwigo:latest
     labels: [traefik.backend=piwigo, 'traefik.frontend.rule=Host:piwigo.${TRAEFIK_DOMAIN}',
-      traefik.enable=true, traefik.port=8760]
+      traefik.enable=true, traefik.port=8760, traefik.docker.network=docker_webgateway]
     networks: [webgateway]
     ports: ['8760:80']
     volumes: ['${DOCKER_CONFIG}/piwigo:/config']
