@@ -1,4 +1,9 @@
 services:
+  adminer:
+    image: adminer    
+    labels: [traefik.backend=adminer, 'traefik.frontend.rule=Host:adminer.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8080]
+    networks: [webgateway]
   beets:
     container_name: beets
     environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
