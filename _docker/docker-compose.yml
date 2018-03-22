@@ -1,6 +1,12 @@
 networks:
   webgateway: {driver: bridge}
 services:
+  adminer:
+    depends_on: [traefik]
+    image: adminer
+    labels: [traefik.backend=adminer, 'traefik.frontend.rule=Host:adminer.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8080]
+    networks: [webgateway]
   dnsmasq:
     container_name: dnsmasq
     environment: [HTTP_USER=kelghar, HTTP_PASS=Bigfoot]
@@ -28,7 +34,6 @@ services:
     labels: [traefik.backend=piwigo, 'traefik.frontend.rule=Host:piwigo.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=80, traefik.docker.network=docker_webgateway]
     networks: [webgateway]
-    #ports: ['8760:80']
     volumes: ['${DOCKER_CONFIG}/piwigo:/config']
   portainer:
     container_name: portainer
