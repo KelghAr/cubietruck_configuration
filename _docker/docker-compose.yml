@@ -5,8 +5,7 @@ services:
     container_name: dnsmasq
     environment: [HTTP_USER=kelghar, HTTP_PASS=Bigfoot]
     image: jpillora/dnsmasq:latest
-    #network_mode: host
-    networks: [webgateway]
+    network_mode: host
     ports: ['5380:5380', '53:53/udp', '67:67/udp']
     privileged: true
     volumes: ['${DOCKER_CONFIG}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf', '${DOCKER_CONFIG}/dnsmasq/hosts:/etc/hosts']
@@ -43,6 +42,7 @@ services:
   pyload:
     container_name: pyload
     depends_on: [traefik]
+    dns: [8.8.8.8]
     environment: ['DOCKUID=${USERMAP_UID}', 'DOCKGID=${USERMAP_GID}']
     image: digrouz/docker-alp-pyload:latest
     labels: [traefik.backend=pyload, 'traefik.frontend.rule=Host:pyload.${TRAEFIK_DOMAIN}',
