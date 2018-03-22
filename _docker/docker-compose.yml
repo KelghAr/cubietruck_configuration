@@ -5,7 +5,8 @@ services:
     container_name: dnsmasq
     environment: [HTTP_USER=kelghar, HTTP_PASS=Bigfoot]
     image: jpillora/dnsmasq:latest
-    network_mode: host
+    #network_mode: host
+    networks: [webgateway]
     ports: ['5380:5380', '53:53/udp', '67:67/udp']
     privileged: true
     volumes: ['${DOCKER_CONFIG}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf', '${DOCKER_CONFIG}/dnsmasq/hosts:/etc/hosts']
