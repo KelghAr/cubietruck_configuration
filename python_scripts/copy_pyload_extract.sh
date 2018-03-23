@@ -1,9 +1,9 @@
 #!/bin/bash
 targetPath="/home/kelghar/mount_point/share/pyload"
-if [ -e targetPath + "/pyload_extract.py" ]
+if [ -e "$targetPath/pyload_extract.py" ]
 then
     echo "move file to bak"
-    mv targetPath + "/pyload_extract.py" targetPath + "/pyload_extract.py.bak"
+    mv "$targetPath/pyload_extract.py" "$targetPath/pyload_extract.py.bak"
 fi
 echo "copy file"
-cp mv "pyload_extract.py" targetPath + "/pyload_extract.py" 
+cp mv "pyload_extract.py" "$targetPath/pyload_extract.py"
