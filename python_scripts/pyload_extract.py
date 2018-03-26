@@ -66,12 +66,8 @@ def getExtractSpaceRequirements(file, password):
 		log('Paket size: ' + cutLine, debugToCommandLine)
 		return int(cutLine)
 	return 0
+	
 def disk_usage(path):
-    """Return disk usage statistics about the given path.
-
-    Will return the namedtuple with attributes: 'total', 'used' and 'free',
-    which are the amount of total, used and free space, in bytes.
-    """
     st = os.statvfs(path)
     free = st.f_bavail * st.f_frsize
     return free
