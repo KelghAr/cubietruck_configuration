@@ -56,8 +56,10 @@ def getExtractSpaceRequirements(file, password):
 	import subprocess
 	import re
 	cmd7z = ['7z', 'l', '-slt', '-p'+password, file]
+	log('Command: ' + str(cmd7z), debugToCommandLine)
 	ps7z = subprocess.Popen(cmd7z, stderr=subprocess.STDOUT, stdout=subprocess.PIPE, bufsize=1)
 	output = ps7z.communicate()[0]
+	print (output)
 	r = re.compile(r'^Size')
 	grepLine = list(filter(r.match, output.decode('utf-8').splitlines()))
 	cutLine = grepLine[0].split(' ')[2]
