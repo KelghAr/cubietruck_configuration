@@ -60,11 +60,12 @@ def getExtractSpaceRequirements(file, password):
 	ps7z = subprocess.Popen(cmd7z, stderr=subprocess.STDOUT, stdout=subprocess.PIPE, bufsize=1)
 	output = ps7z.communicate()[0]
 	print (output)
-	r = re.compile(r'^Size')
-	grepLine = list(filter(r.match, output.decode('utf-8').splitlines()))
-	cutLine = grepLine[0].split(' ')[2]
-	return int(cutLine)
-
+	if ps7z.returncode == 0:
+		r = re.compile(r'^Size')
+		grepLine = list(filter(r.match, output.decode('utf-8').splitlines()))
+		cutLine = grepLine[0].split(' ')[2]
+		return int(cutLine)
+	return 0
 def disk_usage(path):
     """Return disk usage statistics about the given path.
 
