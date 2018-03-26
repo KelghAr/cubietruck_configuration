@@ -52,10 +52,10 @@ def extract(file, password):
 	log('Returning ' + str(returnval), debugToCommandLine)
 	return returnval
 
-def getExtractSpaceRequirements(file):
+def getExtractSpaceRequirements(file, password):
 	import subprocess
 	import re
-	cmd7z = ['7z', 'l', '-slt', file]
+	cmd7z = ['7z', 'l', '-slt', '-p'+password, file]
 	ps7z = subprocess.Popen(cmd7z, stderr=subprocess.STDOUT, stdout=subprocess.PIPE, bufsize=1)
 	output = ps7z.communicate()[0]
 	r = re.compile(r'^Size')
@@ -99,7 +99,7 @@ def main():
 	password = sys.argv[1]
 	files = find_all(regex, '.')
 	for file in files:
-		if getExtractSpaceRequirements(file) < disk_usage('.'):
+		if getExtractSpaceRequirements(file, password) < disk_usage('.'):
 			retval = extract(file, password)
 			if retval == 0:
 				send_to_trash(os.path.abspath(file))
