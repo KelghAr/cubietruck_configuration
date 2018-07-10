@@ -82,6 +82,7 @@ services:
   syncthing:
     container_name: syncthing
     depends_on: [traefik]
+    dns: [8.8.8.8]
     environment: ['PUID=${USERMAP_UID}', 'PGID=${USERMAP_GID}']
     image: linuxserver/syncthing:latest
     labels: [traefik.backend=syncthing, 'traefik.frontend.rule=Host:syncthing.${TRAEFIK_DOMAIN}',
@@ -108,4 +109,9 @@ services:
     ports: ['9091:9091', '51413:51413', '51413:51413/udp']
     volumes: ['${DOCKER_CONFIG}/transmission:/config', '/home/kelghar/mount_point/share/_transmission/incoming:/downloads',
       '/home/kelghar/mount_point/share/_transmission/watch:/watch']
+  watchtower:
+    command: --cleanup --schedule "0 23 * * *"
+    container_name: watchtower
+    image: v2tec/watchtower
+    volumes: ['/var/run/docker.sock:/var/run/docker.sock']
 version: '3.0'

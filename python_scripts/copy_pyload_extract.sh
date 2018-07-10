@@ -6,4 +6,4 @@ then
     mv "$targetPath/pyload_extract.py" "$targetPath/pyload_extract.py.bak"
 fi
 echo "copy file"
-cp mv "pyload_extract.py" "$targetPath/pyload_extract.py"
+cp "pyload_extract.py" "$targetPath/pyload_extract.py"

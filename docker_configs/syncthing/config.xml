@@ -1,4 +1,4 @@
-<configuration version="26">
+<configuration version="28">
     <folder id="5zc7r-nzpxc" label="Bilder" path="/sync/Bilder/" type="readwrite" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" introducedBy=""></device>
@@ -6,7 +6,7 @@
         <minDiskFree unit="%">1</minDiskFree>
         <versioning></versioning>
         <copiers>0</copiers>
-        <pullers>0</pullers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
         <hashers>0</hashers>
         <order>random</order>
         <ignoreDelete>false</ignoreDelete>
@@ -18,66 +18,7 @@
         <paused>false</paused>
         <weakHashThresholdPct>25</weakHashThresholdPct>
         <markerName>.stfolder</markerName>
-    </folder>
-    <folder id="rpde5-tdgac" label="Bilder Arbeit" path="/sync/Bilder/_arbeit/" type="readwrite" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
-        <filesystemType>basic</filesystemType>
-        <device id="SPDMZOS-IKS2B7U-JWH2BTA-SUIRIFX-2AW7IJ5-4EUGYB4-6FTALSJ-PGKB7QE" introducedBy=""></device>
-        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
-        <minDiskFree unit="%">1</minDiskFree>
-        <versioning></versioning>
-        <copiers>0</copiers>
-        <pullers>0</pullers>
-        <hashers>0</hashers>
-        <order>random</order>
-        <ignoreDelete>false</ignoreDelete>
-        <scanProgressIntervalS>0</scanProgressIntervalS>
-        <pullerPauseS>0</pullerPauseS>
-        <maxConflicts>10</maxConflicts>
-        <disableSparseFiles>false</disableSparseFiles>
-        <disableTempIndexes>false</disableTempIndexes>
-        <paused>false</paused>
-        <weakHashThresholdPct>25</weakHashThresholdPct>
-        <markerName>.stfolder</markerName>
-    </folder>
-    <folder id="p6w7x-p7ahl" label="Documents" path="/sync/Documents/" type="readwrite" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
-        <filesystemType>basic</filesystemType>
-        <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" introducedBy=""></device>
-        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
-        <minDiskFree unit="%">1</minDiskFree>
-        <versioning></versioning>
-        <copiers>0</copiers>
-        <pullers>0</pullers>
-        <hashers>0</hashers>
-        <order>random</order>
-        <ignoreDelete>false</ignoreDelete>
-        <scanProgressIntervalS>0</scanProgressIntervalS>
-        <pullerPauseS>0</pullerPauseS>
-        <maxConflicts>10</maxConflicts>
-        <disableSparseFiles>false</disableSparseFiles>
-        <disableTempIndexes>false</disableTempIndexes>
-        <paused>false</paused>
-        <weakHashThresholdPct>25</weakHashThresholdPct>
-        <markerName>.stfolder</markerName>
-    </folder>
-    <folder id="motoe24g-lte-Bilder" label="Kamera" path="/sync/Bilder/Kamera/" type="readwrite" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
-        <filesystemType>basic</filesystemType>
-        <device id="FXBDEMS-BJIEZCD-X6BFC5Z-4GVD5YL-DRZORF7-JTMBLKN-CCZXVW6-M4DN2QG" introducedBy=""></device>
-        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
-        <minDiskFree unit="%">1</minDiskFree>
-        <versioning></versioning>
-        <copiers>0</copiers>
-        <pullers>0</pullers>
-        <hashers>0</hashers>
-        <order>random</order>
-        <ignoreDelete>false</ignoreDelete>
-        <scanProgressIntervalS>0</scanProgressIntervalS>
-        <pullerPauseS>0</pullerPauseS>
-        <maxConflicts>10</maxConflicts>
-        <disableSparseFiles>false</disableSparseFiles>
-        <disableTempIndexes>false</disableTempIndexes>
-        <paused>false</paused>
-        <weakHashThresholdPct>25</weakHashThresholdPct>
-        <markerName>.stfolder</markerName>
+        <useLargeBlocks>false</useLargeBlocks>
     </folder>
     <folder id="aaw7g-ki2nh" label="Private" path="/sync/private/" type="readwrite" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
@@ -86,7 +27,7 @@
         <minDiskFree unit="%">1</minDiskFree>
         <versioning></versioning>
         <copiers>0</copiers>
-        <pullers>0</pullers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
         <hashers>0</hashers>
         <order>random</order>
         <ignoreDelete>false</ignoreDelete>
@@ -98,17 +39,19 @@
         <paused>false</paused>
         <weakHashThresholdPct>25</weakHashThresholdPct>
         <markerName>.stfolder</markerName>
+        <useLargeBlocks>false</useLargeBlocks>
     </folder>
     <folder id="kwtsc-wb7np" label="Security Essentials" path="/sync/security-essentials/" type="readwrite" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="FXBDEMS-BJIEZCD-X6BFC5Z-4GVD5YL-DRZORF7-JTMBLKN-CCZXVW6-M4DN2QG" introducedBy=""></device>
         <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" introducedBy=""></device>
+        <device id="QVXZZHS-Q5ZVD24-44GZOG5-7JOHXOT-M2A57G5-IRZQVDK-EOOCIKT-6E7BYQ5" introducedBy=""></device>
         <device id="SPDMZOS-IKS2B7U-JWH2BTA-SUIRIFX-2AW7IJ5-4EUGYB4-6FTALSJ-PGKB7QE" introducedBy=""></device>
         <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
         <minDiskFree unit="%">1</minDiskFree>
         <versioning></versioning>
         <copiers>0</copiers>
-        <pullers>0</pullers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
         <hashers>0</hashers>
         <order>random</order>
         <ignoreDelete>false</ignoreDelete>
@@ -120,26 +63,105 @@
         <paused>false</paused>
         <weakHashThresholdPct>25</weakHashThresholdPct>
         <markerName>.stfolder</markerName>
+        <useLargeBlocks>false</useLargeBlocks>
+    </folder>
+    <folder id="motoe24g-lte-Bilder" label="Kamera" path="/sync/Bilder/Kamera/" type="readwrite" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="FXBDEMS-BJIEZCD-X6BFC5Z-4GVD5YL-DRZORF7-JTMBLKN-CCZXVW6-M4DN2QG" introducedBy=""></device>
+        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <useLargeBlocks>false</useLargeBlocks>
+    </folder>
+    <folder id="p6w7x-p7ahl" label="Documents" path="/sync/Documents/" type="readwrite" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" introducedBy=""></device>
+        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <useLargeBlocks>false</useLargeBlocks>
+    </folder>
+    <folder id="rpde5-tdgac" label="Bilder Arbeit" path="/sync/Bilder/_arbeit/" type="readwrite" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="SPDMZOS-IKS2B7U-JWH2BTA-SUIRIFX-2AW7IJ5-4EUGYB4-6FTALSJ-PGKB7QE" introducedBy=""></device>
+        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <useLargeBlocks>false</useLargeBlocks>
     </folder>
     <device id="FXBDEMS-BJIEZCD-X6BFC5Z-4GVD5YL-DRZORF7-JTMBLKN-CCZXVW6-M4DN2QG" name="MotoE2(4G-LTE)" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
     </device>
     <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" name="Ursa-Minor" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+    </device>
+    <device id="QVXZZHS-Q5ZVD24-44GZOG5-7JOHXOT-M2A57G5-IRZQVDK-EOOCIKT-6E7BYQ5" name="Moto G5S" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
     </device>
     <device id="SPDMZOS-IKS2B7U-JWH2BTA-SUIRIFX-2AW7IJ5-4EUGYB4-6FTALSJ-PGKB7QE" name="Arbeit PC" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
     </device>
     <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" name="Andromeda" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
     </device>
     <gui enabled="true" tls="false" debugging="false">
         <address>127.0.0.1:8384</address>
@@ -181,16 +203,8 @@
         <overwriteRemoteDeviceNamesOnConnect>false</overwriteRemoteDeviceNamesOnConnect>
         <tempIndexMinBlocks>10</tempIndexMinBlocks>
         <trafficClass>0</trafficClass>
-        <weakHashSelectionMethod>auto</weakHashSelectionMethod>
-        <stunServer>default</stunServer>
-        <stunKeepaliveSeconds>24</stunKeepaliveSeconds>
-        <kcpNoDelay>false</kcpNoDelay>
-        <kcpUpdateIntervalMs>25</kcpUpdateIntervalMs>
-        <kcpFastResend>false</kcpFastResend>
-        <kcpCongestionControl>true</kcpCongestionControl>
-        <kcpSendWindowSize>128</kcpSendWindowSize>
-        <kcpReceiveWindowSize>128</kcpReceiveWindowSize>
         <defaultFolderPath>~</defaultFolderPath>
+        <setLowPriority>true</setLowPriority>
         <minHomeDiskFreePct>0</minHomeDiskFreePct>
     </options>
     <ignoredFolder>default</ignoredFolder>
