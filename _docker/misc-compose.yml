@@ -1,4 +1,13 @@
 services:
+  adminer:
+    container_name: adminer
+    depends_on: [traefik]
+    image: clue/adminer
+    dns: [8.8.8.8]
+    #ports: ['9000:9000']
+    labels: [traefik.backend=adminer, 'traefik.frontend.rule=Host:adminer.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=80, traefik.docker.network=docker_webgateway]
+    networks: [webgateway]
   beets:
     container_name: beets
     environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
