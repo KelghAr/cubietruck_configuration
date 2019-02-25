@@ -31,4 +31,13 @@ services:
     image: solidnerd/rainloop:1.10.5.192
     volumes: ['${DOCKER_CONFIG}/rainloop/data:/var/www/rainloop/data']
     ports: ['5656:80']
+  adminer:
+    container_name: adminer
+    depends_on: [traefik]
+    image: clue/adminer
+    dns: [8.8.8.8]
+    #ports: ['9000:9000']
+    labels: [traefik.backend=adminer, 'traefik.frontend.rule=Host:adminer.${TRAEFIK_DOMAIN}',
+            traefik.enable=true, traefik.port=80, traefik.docker.network=docker_webgateway]
+    networks: [webgateway]
 version: '3.0'

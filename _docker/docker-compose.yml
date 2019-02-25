@@ -1,21 +1,12 @@
 networks:
   webgateway: {driver: bridge}
 services:
-  adminer:
-    container_name: adminer
-    depends_on: [traefik]
-    image: clue/adminer
-    dns: [8.8.8.8]
-    #ports: ['9000:9000']
-    labels: [traefik.backend=adminer, 'traefik.frontend.rule=Host:adminer.${TRAEFIK_DOMAIN}',
-      traefik.enable=true, traefik.port=80, traefik.docker.network=docker_webgateway]
-    networks: [webgateway]
   dnsmasq:
     container_name: dnsmasq
     environment: [HTTP_USER=kelghar, HTTP_PASS=Bigfoot]
     image: jpillora/dnsmasq:latest
     network_mode: host
-    ports: ['5380:5380', '53:53/udp', '67:67/udp']
+    ports: ['5380:8080', '53:53/udp', '67:67/udp']
     privileged: true
     volumes: ['${DOCKER_CONFIG}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf', '${DOCKER_CONFIG}/dnsmasq/hosts:/etc/hosts']
   ffsync:
@@ -41,11 +32,10 @@ services:
   portainer:
     container_name: portainer
     depends_on: [traefik]
-    image: portainer/portainer
+    image: portainer/portainer:latest
     labels: [traefik.backend=portainer, 'traefik.frontend.rule=Host:portainer.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=9000]
     networks: [webgateway]
-    #ports: ['9000:9000']
     volumes: ['/var/run/docker.sock:/var/run/docker.sock', '/home/kelghar/.portainer:/data']
   pyload:
     container_name: pyload
