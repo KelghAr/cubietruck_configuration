@@ -99,6 +99,15 @@ services:
     ports: ['9091:9091', '51413:51413', '51413:51413/udp']
     volumes: ['${DOCKER_CONFIG}/transmission:/config', '/home/kelghar/mount_point/share/_transmission/incoming:/downloads',
       '/home/kelghar/mount_point/share/_transmission/watch:/watch']
+  calibre:
+    container_name: calibre
+    environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
+    image: linuxserver/calibre-web
+    labels: [traefik.backend=calibre, 'traefik.frontend.rule=Host:calibre.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8083]
+    networks: [webgateway]
+    ports: ['8083:8083']
+    volumes: ['${DOCKER_CONFIG}/calibre:/config', '/home/kelghar/mount_point/share/buecher/calibre:/books']
   watchtower:
     command: --cleanup --schedule "0 23 * * *"
     container_name: watchtower
