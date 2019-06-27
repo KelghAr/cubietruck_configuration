@@ -6,12 +6,12 @@ fi
 
 SCRIPT_HOME="`dirname \"$0\"`"
 SCRIPT_HOME="`( cd \"$SCRIPT_HOME\" && pwd )`"
-NGINX_CERT_DIR=/etc/nginx/certs/andromeda.home
+NGINX_CERT_DIR=/home/kelghar/git/cubietruck_configuration/docker_configs/traefik/certs
 POSTFIX_CERT_DIR=/etc/postfix/certs
 WORKING_DIR=$SCRIPT_HOME/working
-FOLDER_TO_RESTORE=$SCRIPT_HOME/folder_to_restore.list
+#FOLDER_TO_RESTORE=$SCRIPT_HOME/folder_to_restore.list
 
-xargs mkdir -p < $FOLDER_TO_RESTORE
+#xargs mkdir -p < $FOLDER_TO_RESTORE
 
 mkdir $WORKING_DIR
 

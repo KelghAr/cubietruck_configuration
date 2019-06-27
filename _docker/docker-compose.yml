@@ -116,10 +116,12 @@ services:
   openhab:
     image: "openhab/openhab:2.4.0"
     restart: always
-    labels: [traefik.backend=openhab, 'traefik.frontend.rule=Host:openhab.${TRAEFIK_DOMAIN}',
-      traefik.enable=true, traefik.port=8443]
-    networks: [webgateway]
-    ports: ['8084:8084', '8443:8443']
+    #labels: [traefik.backend=openhab, 'traefik.frontend.rule=Host:openhab.${TRAEFIK_DOMAIN}',
+    #  traefik.enable=true, traefik.port=8443]
+    #dns: [8.8.8.8]
+    #networks: [webgateway]
+    network_mode: host
+    #ports: ['8084:8084', '8443:8443', '1883:1883']
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
       - "/etc/timezone:/etc/timezone:ro"

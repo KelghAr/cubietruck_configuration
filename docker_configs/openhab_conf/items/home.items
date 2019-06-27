@@ -1,0 +1,10 @@
+Group    Home            "Home sweet Home"   <house>                             ["Building"]
+
+Group    F2              "Zweiter Stock"     <attic>         (Home)              ["Attic"]
+
+Group    Bedroom         "Schlafzimmer"      <bedroom>       (Home)              ["Bedroom"]
+
+Switch   Bedroom_Power   "Steckdose"         (LR,gLight) { mqtt=">[broker:cmnd/sonoff-2803/POWER:command:*:default], <[broker:stat/sonoff-2803/POWER:state:default]"
+
+Group:Switch:OR(ON, OFF)   gPower   "Steckdose"   <poweroutlet>   (Home)   ["Switch", "Switchable"]
+

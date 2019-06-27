@@ -1,0 +1,11 @@
+sitemap home_sweet_home label="Home sweet Home" {
+    Frame {
+        Group item=Bedroom
+    }
+
+    Frame {
+        Text label="Steckdose" icon="poweroutlet" {
+            Default item=Bedroom_Power label="Schlafzimmer"
+        }
+    }
+}
