@@ -14,5 +14,5 @@ PATHS_EXCLUDE="$BACKUP_UTILS/backup_exclude.list"
 
 # RESTORE
 RESTORE_UTILS="$SCRIPT_HOME/_restore_backup"
-PATHS_EXCLUDE="$RESTORE_UTILS/restore_exclude.list"
+PATHS_RESTORE_EXCLUDE="$RESTORE_UTILS/restore_exclude.list"
 
