@@ -49,4 +49,23 @@ services:
     labels: [traefik.backend=adminer, 'traefik.frontend.rule=Host:adminer.${TRAEFIK_DOMAIN}',
             traefik.enable=true, traefik.port=80, traefik.docker.network=docker_webgateway]
     networks: [webgateway]
+   calibre:
+        container_name: calibre
+            environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
+            image: linuxserver/calibre-web
+            labels: [traefik.backend=calibre, 'traefik.frontend.rule=Host:calibre.${TRAEFIK_DOMAIN}',
+              traefik.enable=true, traefik.port=8083]
+            networks: [webgateway]
+            ports: ['8083:8083']
+            volumes: ['${DOCKER_CONFIG}/calibre:/config', '/home/kelghar/mount_point/share/buecher/calibre:/books']
+ piwigo:
+           container_name: piwigo
+            depends_on: [traefik]
+             environment: [TZ=Europe/Berlin, PGID=1000, PUID=1000]
+              image: linuxserver/piwigo:latest
+               labels: [traefik.backend=piwigo, 'traefik.frontend.rule=Host:piwigo.${TRAEFIK_DOMAIN}',
+                  traefik.enable=true, traefik.port=80, traefik.docker.network=docker_webgateway]
+                 networks: [webgateway]
+                  volumes: ['${DOCKER_CONFIG}/piwigo:/config']
+
 version: '3.0'

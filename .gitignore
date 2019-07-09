@@ -17,3 +17,6 @@ sftp-config.json
 
 #python
 *.pyc
+
+# Traefik cert files
+docker_configs/traefik/certs

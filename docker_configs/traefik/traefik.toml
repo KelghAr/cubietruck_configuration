@@ -5,6 +5,8 @@
 logLevel = "ERROR"
 defaultEntryPoints = ["http", "https"]
 
+#[accessLog]
+
 ################################################################
 # Entrypoints configuration
 ################################################################
