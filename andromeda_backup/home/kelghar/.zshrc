@@ -30,5 +30,5 @@ alias ezsh='$EDITOR ~/.zshrc'
 alias cl=clear
 alias apt-search='sudo apt-cache search'
 alias apt-install='sudo apt-get install'
-alias tm='tmux attach -t andromeda || tmux new -s andromeda'
+#alias tm='tmux attach -t andromeda || tmux new -s andromeda'
 

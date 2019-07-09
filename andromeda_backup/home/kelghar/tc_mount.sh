@@ -1,4 +1,4 @@
-cryptsetup luksOpen /dev/sda4 crypt_sda
+cryptsetup luksOpen /dev/sda6 crypt_sda
 mount /dev/mapper/crypt_sda  /home/kelghar/mount_point/share
 #/home/kelghar/noip-2.1.9-1/noip2
 #service transmission-daemon restart

@@ -1,6 +1,6 @@
 chown 0 .git_cache_meta
 chgrp 0 .git_cache_meta
-touch -c -d "2019-07-09 18:12:39.5163302080" .git_cache_meta
+touch -c -d "2019-07-09 18:13:47.8025545110" .git_cache_meta
 chmod 0644 .git_cache_meta
 chown 1000 .gitignore
 chgrp 1000 .gitignore
@@ -20,11 +20,11 @@ touch -c -d "2019-07-09 18:05:46.9933608020" _backup_config/functions.config.sh
 chmod 0644 _backup_config/functions.config.sh
 chown 1000 _backup_config/variables.config.sh
 chgrp 1000 _backup_config/variables.config.sh
-touch -c -d "2019-07-09 18:06:41.4835357310" _backup_config/variables.config.sh
+touch -c -d "2019-07-09 18:13:40.2303104110" _backup_config/variables.config.sh
 chmod 0644 _backup_config/variables.config.sh
 chown 1000 _create_backup/backup_exclude.list
 chgrp 1000 _create_backup/backup_exclude.list
-touch -c -d "2019-03-18 18:12:58.0411858110" _create_backup/backup_exclude.list
+touch -c -d "2019-07-09 18:13:47.6505496160" _create_backup/backup_exclude.list
 chmod 0644 _create_backup/backup_exclude.list
 chown 1000 _create_backup/backup_paths.list
 chgrp 1000 _create_backup/backup_paths.list
@@ -58,41 +58,41 @@ chown 1000 andromeda_backup/etc/aliases
 chgrp 1000 andromeda_backup/etc/aliases
 touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/etc/aliases
 chmod 0644 andromeda_backup/etc/aliases
-chown 1000 andromeda_backup/etc/hostname
-chgrp 1000 andromeda_backup/etc/hostname
-touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/etc/hostname
+chown 0 andromeda_backup/etc/hostname
+chgrp 0 andromeda_backup/etc/hostname
+touch -c -d "2019-07-09 18:13:47.6545497450" andromeda_backup/etc/hostname
 chmod 0644 andromeda_backup/etc/hostname
-chown 1000 andromeda_backup/etc/hosts
-chgrp 1000 andromeda_backup/etc/hosts
-touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/etc/hosts
+chown 0 andromeda_backup/etc/hosts
+chgrp 0 andromeda_backup/etc/hosts
+touch -c -d "2019-07-09 18:13:47.6625500030" andromeda_backup/etc/hosts
 chmod 0644 andromeda_backup/etc/hosts
-chown 1000 andromeda_backup/etc/network/interfaces
-chgrp 1000 andromeda_backup/etc/network/interfaces
-touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/etc/network/interfaces
+chown 0 andromeda_backup/etc/network/interfaces
+chgrp 0 andromeda_backup/etc/network/interfaces
+touch -c -d "2019-07-09 18:13:47.6745503900" andromeda_backup/etc/network/interfaces
 chmod 0644 andromeda_backup/etc/network/interfaces
-chown 1000 andromeda_backup/etc/resolv.conf
-chgrp 1000 andromeda_backup/etc/resolv.conf
-touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/etc/resolv.conf
+chown 0 andromeda_backup/etc/resolv.conf
+chgrp 0 andromeda_backup/etc/resolv.conf
+touch -c -d "2019-07-09 18:13:47.6945510340" andromeda_backup/etc/resolv.conf
 chmod 0644 andromeda_backup/etc/resolv.conf
-chown 1000 andromeda_backup/etc/samba/configs/smb_andromeda.conf
-chgrp 1000 andromeda_backup/etc/samba/configs/smb_andromeda.conf
-touch -c -d "2019-07-09 17:38:16.7236545980" andromeda_backup/etc/samba/configs/smb_andromeda.conf
+chown 0 andromeda_backup/etc/samba/configs/smb_andromeda.conf
+chgrp 0 andromeda_backup/etc/samba/configs/smb_andromeda.conf
+touch -c -d "2019-07-09 18:13:47.6865507760" andromeda_backup/etc/samba/configs/smb_andromeda.conf
 chmod 0644 andromeda_backup/etc/samba/configs/smb_andromeda.conf
 chown 1000 andromeda_backup/home/kelghar/.tmux.conf
 chgrp 1000 andromeda_backup/home/kelghar/.tmux.conf
-touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/home/kelghar/.tmux.conf
+touch -c -d "2019-07-09 18:13:47.7225519350" andromeda_backup/home/kelghar/.tmux.conf
 chmod 0644 andromeda_backup/home/kelghar/.tmux.conf
 chown 1000 andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
 chgrp 1000 andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
-touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
+touch -c -d "2019-07-09 18:13:47.7705534810" andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
 chmod 0644 andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
 chown 1000 andromeda_backup/home/kelghar/.zshrc
 chgrp 1000 andromeda_backup/home/kelghar/.zshrc
-touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/home/kelghar/.zshrc
+touch -c -d "2019-07-09 18:13:47.7385524500" andromeda_backup/home/kelghar/.zshrc
 chmod 0644 andromeda_backup/home/kelghar/.zshrc
 chown 1000 andromeda_backup/home/kelghar/tc_mount.sh
 chgrp 1000 andromeda_backup/home/kelghar/tc_mount.sh
-touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/home/kelghar/tc_mount.sh
+touch -c -d "2019-07-09 18:13:47.7545529650" andromeda_backup/home/kelghar/tc_mount.sh
 chmod 0644 andromeda_backup/home/kelghar/tc_mount.sh
 chown 1000 backup_config.sh
 chgrp 1000 backup_config.sh
