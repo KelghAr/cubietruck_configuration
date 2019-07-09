@@ -27,47 +27,15 @@ git_stuff() {
 	chown kelghar:kelghar $SCRIPT_HOME/.git/ -R
 }
 
-backup_mysql() {
-	while IFS=';' read -ra line
-	do
-		mysqldump -u${line[1]} -p${line[2]} ${line[0]} > $PATH_TO_HIDE/${line[0]}.sql
-	done < "$DATABASES_TO_BACKUP"
-}
-
-save_crontab() {
-	su - kelghar -c "crontab -l > $KELGHAR_HOME/crontab_config"
-	mv $KELGHAR_HOME/crontab_config $CONFIG_DIR/	
-}
-
 make_dir $CONFIG_DIR
-
-
-#echo "Apply metastore file"
-#apply_or_create_metadata a
-
-#echo "Stop services"
-#shutting down SERVICES_TO_STOP
-#start_stop_services stop
 
 echo "Make rsync backup"
 run_rsync_backup
 
-echo "Saving Crontab"
-save_crontab
-
 echo "Create metastore file"
 rm $SCRIPT_HOME/.git_cache_meta
 sh -e $SCRIPT_HOME/diverse_bash_scripts/git-cache-meta.sh --store
-#apply_or_create_metadata s
-
-#echo "Start services again"
-#start_stop_services start
 
 echo "Git stuff"
 git_stuff
 
-#echo "Backup mysql"
-#backup_mysql
-
-#echo "Backup mail"
-#bash $SCRIPT_HOME/_mail_backup/backup_mail.sh
