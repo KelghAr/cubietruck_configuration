@@ -1,364 +1,264 @@
 chown 0 .git_cache_meta
 chgrp 0 .git_cache_meta
-touch -c -d "2017-11-02 17:32:04.7894409620" .git_cache_meta
+touch -c -d "2019-07-09 18:06:41.5635388690" .git_cache_meta
 chmod 0644 .git_cache_meta
 chown 1000 .gitignore
 chgrp 1000 .gitignore
-touch -c -d "2017-11-02 12:47:14.9613742420" .gitignore
+touch -c -d "2019-07-09 17:36:23.4600563430" .gitignore
 chmod 0644 .gitignore
 chown 1000 LICENSE
 chgrp 1000 LICENSE
-touch -c -d "2017-03-22 14:11:07.3824917040" LICENSE
+touch -c -d "2019-03-18 18:12:58.0411858110" LICENSE
 chmod 0644 LICENSE
 chown 1000 README.md
 chgrp 1000 README.md
-touch -c -d "2017-03-22 14:11:07.3864917040" README.md
+touch -c -d "2019-03-18 18:12:58.0411858110" README.md
 chmod 0644 README.md
 chown 1000 _backup_config/functions.config.sh
 chgrp 1000 _backup_config/functions.config.sh
-touch -c -d "2017-11-02 17:32:03.7574135870" _backup_config/functions.config.sh
+touch -c -d "2019-07-09 18:05:46.9933608020" _backup_config/functions.config.sh
 chmod 0644 _backup_config/functions.config.sh
 chown 1000 _backup_config/variables.config.sh
 chgrp 1000 _backup_config/variables.config.sh
-touch -c -d "2017-11-02 17:32:03.7414131620" _backup_config/variables.config.sh
+touch -c -d "2019-07-09 18:06:41.4835357310" _backup_config/variables.config.sh
 chmod 0644 _backup_config/variables.config.sh
 chown 1000 _create_backup/backup_exclude.list
 chgrp 1000 _create_backup/backup_exclude.list
-touch -c -d "2017-03-22 14:11:07.3864917040" _create_backup/backup_exclude.list
+touch -c -d "2019-03-18 18:12:58.0411858110" _create_backup/backup_exclude.list
 chmod 0644 _create_backup/backup_exclude.list
 chown 1000 _create_backup/backup_paths.list
 chgrp 1000 _create_backup/backup_paths.list
-touch -c -d "2017-11-02 17:29:32.6813716960" _create_backup/backup_paths.list
+touch -c -d "2019-07-09 18:05:46.9933608020" _create_backup/backup_paths.list
 chmod 0644 _create_backup/backup_paths.list
-chown 1000 _create_backup/databases_backup.list
-chgrp 1000 _create_backup/databases_backup.list
-touch -c -d "2017-11-02 17:29:32.6813716960" _create_backup/databases_backup.list
-chmod 0644 _create_backup/databases_backup.list
 chown 1000 _docker/.env
 chgrp 1000 _docker/.env
-touch -c -d "2017-11-02 16:33:06.0146525240" _docker/.env
+touch -c -d "2019-07-09 08:46:52.4567208630" _docker/.env
 chmod 0644 _docker/.env
+chown 1000 _docker/diagram/network_diagram.png
+chgrp 1000 _docker/diagram/network_diagram.png
+touch -c -d "2019-03-18 18:12:58.0411858110" _docker/diagram/network_diagram.png
+chmod 0644 _docker/diagram/network_diagram.png
+chown 1000 _docker/diagram/network_diagram.wsd
+chgrp 1000 _docker/diagram/network_diagram.wsd
+touch -c -d "2019-03-18 18:12:58.0411858110" _docker/diagram/network_diagram.wsd
+chmod 0644 _docker/diagram/network_diagram.wsd
 chown 1000 _docker/docker-compose.yml
 chgrp 1000 _docker/docker-compose.yml
-touch -c -d "2017-11-02 16:33:06.0146525240" _docker/docker-compose.yml
+touch -c -d "2019-07-09 15:55:54.2581172240" _docker/docker-compose.yml
 chmod 0644 _docker/docker-compose.yml
+chown 1000 _docker/misc-compose.yml
+chgrp 1000 _docker/misc-compose.yml
+touch -c -d "2019-07-09 17:53:39.0651074650" _docker/misc-compose.yml
+chmod 0644 _docker/misc-compose.yml
 chown 1000 _docker/run_beets.sh
 chgrp 1000 _docker/run_beets.sh
-touch -c -d "2017-07-21 13:48:53.8781162650" _docker/run_beets.sh
-chmod 0744 _docker/run_beets.sh
-chown 1000 _mail_backup/backup_mail.sh
-chgrp 1000 _mail_backup/backup_mail.sh
-touch -c -d "2017-03-22 14:11:07.3864917040" _mail_backup/backup_mail.sh
-chmod 0644 _mail_backup/backup_mail.sh
-chown 1000 _restore_backup/restore_exclude.list
-chgrp 1000 _restore_backup/restore_exclude.list
-touch -c -d "2017-11-02 17:32:03.7694139050" _restore_backup/restore_exclude.list
-chmod 0644 _restore_backup/restore_exclude.list
-chown 1000 andromeda_backup/crontab_config
-chgrp 1000 andromeda_backup/crontab_config
-touch -c -d "2017-11-02 17:32:04.7534400070" andromeda_backup/crontab_config
-chmod 0644 andromeda_backup/crontab_config
-chown 0 andromeda_backup/etc/aliases
-chgrp 0 andromeda_backup/etc/aliases
-touch -c -d "2017-11-02 17:32:04.4014306690" andromeda_backup/etc/aliases
+touch -c -d "2019-03-18 18:12:58.0411858110" _docker/run_beets.sh
+chmod 0755 _docker/run_beets.sh
+chown 1000 andromeda_backup/etc/aliases
+chgrp 1000 andromeda_backup/etc/aliases
+touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/etc/aliases
 chmod 0644 andromeda_backup/etc/aliases
-chown 0 andromeda_backup/etc/bind/bind.keys
-chgrp 0 andromeda_backup/etc/bind/bind.keys
-touch -c -d "2017-11-02 17:32:03.7854143290" andromeda_backup/etc/bind/bind.keys
-chmod 0644 andromeda_backup/etc/bind/bind.keys
-chown 0 andromeda_backup/etc/bind/db.0
-chgrp 0 andromeda_backup/etc/bind/db.0
-touch -c -d "2017-11-02 17:32:03.7854143290" andromeda_backup/etc/bind/db.0
-chmod 0644 andromeda_backup/etc/bind/db.0
-chown 0 andromeda_backup/etc/bind/db.127
-chgrp 0 andromeda_backup/etc/bind/db.127
-touch -c -d "2017-11-02 17:32:03.7854143290" andromeda_backup/etc/bind/db.127
-chmod 0644 andromeda_backup/etc/bind/db.127
-chown 0 andromeda_backup/etc/bind/db.255
-chgrp 0 andromeda_backup/etc/bind/db.255
-touch -c -d "2017-11-02 17:32:03.7854143290" andromeda_backup/etc/bind/db.255
-chmod 0644 andromeda_backup/etc/bind/db.255
-chown 0 andromeda_backup/etc/bind/db.empty
-chgrp 0 andromeda_backup/etc/bind/db.empty
-touch -c -d "2017-11-02 17:32:03.7894144360" andromeda_backup/etc/bind/db.empty
-chmod 0644 andromeda_backup/etc/bind/db.empty
-chown 0 andromeda_backup/etc/bind/db.home
-chgrp 115 andromeda_backup/etc/bind/db.home
-touch -c -d "2017-11-02 17:32:03.7894144360" andromeda_backup/etc/bind/db.home
-chmod 0644 andromeda_backup/etc/bind/db.home
-chown 0 andromeda_backup/etc/bind/db.home.inv
-chgrp 115 andromeda_backup/etc/bind/db.home.inv
-touch -c -d "2017-11-02 17:32:03.7894144360" andromeda_backup/etc/bind/db.home.inv
-chmod 0644 andromeda_backup/etc/bind/db.home.inv
-chown 0 andromeda_backup/etc/bind/db.local
-chgrp 0 andromeda_backup/etc/bind/db.local
-touch -c -d "2017-11-02 17:32:03.7894144360" andromeda_backup/etc/bind/db.local
-chmod 0644 andromeda_backup/etc/bind/db.local
-chown 0 andromeda_backup/etc/bind/db.root
-chgrp 0 andromeda_backup/etc/bind/db.root
-touch -c -d "2017-11-02 17:32:03.7894144360" andromeda_backup/etc/bind/db.root
-chmod 0644 andromeda_backup/etc/bind/db.root
-chown 0 andromeda_backup/etc/bind/named.conf
-chgrp 115 andromeda_backup/etc/bind/named.conf
-touch -c -d "2017-11-02 17:32:03.7894144360" andromeda_backup/etc/bind/named.conf
-chmod 0644 andromeda_backup/etc/bind/named.conf
-chown 0 andromeda_backup/etc/bind/named.conf.default-zones
-chgrp 115 andromeda_backup/etc/bind/named.conf.default-zones
-touch -c -d "2017-11-02 17:32:03.7894144360" andromeda_backup/etc/bind/named.conf.default-zones
-chmod 0644 andromeda_backup/etc/bind/named.conf.default-zones
-chown 0 andromeda_backup/etc/bind/named.conf.local
-chgrp 115 andromeda_backup/etc/bind/named.conf.local
-touch -c -d "2017-11-02 17:32:03.7894144360" andromeda_backup/etc/bind/named.conf.local
-chmod 0644 andromeda_backup/etc/bind/named.conf.local
-chown 0 andromeda_backup/etc/bind/named.conf.options
-chgrp 115 andromeda_backup/etc/bind/named.conf.options
-touch -c -d "2017-11-02 17:32:03.7894144360" andromeda_backup/etc/bind/named.conf.options
-chmod 0644 andromeda_backup/etc/bind/named.conf.options
-chown 109 andromeda_backup/etc/bind/rndc.key
-chgrp 115 andromeda_backup/etc/bind/rndc.key
-touch -c -d "2017-11-02 17:32:03.7894144360" andromeda_backup/etc/bind/rndc.key
-chmod 0640 andromeda_backup/etc/bind/rndc.key
-chown 0 andromeda_backup/etc/bind/zones.rfc1918
-chgrp 0 andromeda_backup/etc/bind/zones.rfc1918
-touch -c -d "2017-11-02 17:32:03.7934145420" andromeda_backup/etc/bind/zones.rfc1918
-chmod 0644 andromeda_backup/etc/bind/zones.rfc1918
-chown 0 andromeda_backup/etc/hostname
-chgrp 0 andromeda_backup/etc/hostname
-touch -c -d "2017-11-02 17:32:03.8494160270" andromeda_backup/etc/hostname
+chown 1000 andromeda_backup/etc/hostname
+chgrp 1000 andromeda_backup/etc/hostname
+touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/etc/hostname
 chmod 0644 andromeda_backup/etc/hostname
-chown 0 andromeda_backup/etc/hosts
-chgrp 0 andromeda_backup/etc/hosts
-touch -c -d "2017-11-02 17:32:03.9054175130" andromeda_backup/etc/hosts
+chown 1000 andromeda_backup/etc/hosts
+chgrp 1000 andromeda_backup/etc/hosts
+touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/etc/hosts
 chmod 0644 andromeda_backup/etc/hosts
-chown 0 andromeda_backup/etc/network/interfaces
-chgrp 0 andromeda_backup/etc/network/interfaces
-touch -c -d "2017-11-02 17:32:03.9614189980" andromeda_backup/etc/network/interfaces
+chown 1000 andromeda_backup/etc/network/interfaces
+chgrp 1000 andromeda_backup/etc/network/interfaces
+touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/etc/network/interfaces
 chmod 0644 andromeda_backup/etc/network/interfaces
-chown 0 andromeda_backup/etc/nginx/fastcgi_params
-chgrp 0 andromeda_backup/etc/nginx/fastcgi_params
-touch -c -d "2017-11-02 17:32:04.2414264250" andromeda_backup/etc/nginx/fastcgi_params
-chmod 0644 andromeda_backup/etc/nginx/fastcgi_params
-chown 0 andromeda_backup/etc/nginx/sites-available/baikal_conf
-chgrp 0 andromeda_backup/etc/nginx/sites-available/baikal_conf
-touch -c -d "2017-11-02 17:32:04.1334235600" andromeda_backup/etc/nginx/sites-available/baikal_conf
-chmod 0644 andromeda_backup/etc/nginx/sites-available/baikal_conf
-chown 0 andromeda_backup/etc/nginx/sites-available/default
-chgrp 0 andromeda_backup/etc/nginx/sites-available/default
-touch -c -d "2017-11-02 17:32:04.1334235600" andromeda_backup/etc/nginx/sites-available/default
-chmod 0644 andromeda_backup/etc/nginx/sites-available/default
-chown 0 andromeda_backup/etc/nginx/sites-available/photato_conf
-chgrp 0 andromeda_backup/etc/nginx/sites-available/photato_conf
-touch -c -d "2017-11-02 17:32:04.1334235600" andromeda_backup/etc/nginx/sites-available/photato_conf
-chmod 0644 andromeda_backup/etc/nginx/sites-available/photato_conf
-chown 0 andromeda_backup/etc/nginx/sites-available/pyload_conf
-chgrp 0 andromeda_backup/etc/nginx/sites-available/pyload_conf
-touch -c -d "2017-11-02 17:32:04.1334235600" andromeda_backup/etc/nginx/sites-available/pyload_conf
-chmod 0644 andromeda_backup/etc/nginx/sites-available/pyload_conf
-chown 0 andromeda_backup/etc/nginx/sites-available/selfoss_conf
-chgrp 0 andromeda_backup/etc/nginx/sites-available/selfoss_conf
-touch -c -d "2017-11-02 17:32:04.1334235600" andromeda_backup/etc/nginx/sites-available/selfoss_conf
-chmod 0644 andromeda_backup/etc/nginx/sites-available/selfoss_conf
-chown 0 andromeda_backup/etc/nginx/sites-available/syncFF_conf
-chgrp 0 andromeda_backup/etc/nginx/sites-available/syncFF_conf
-touch -c -d "2017-11-02 17:32:04.1334235600" andromeda_backup/etc/nginx/sites-available/syncFF_conf
-chmod 0644 andromeda_backup/etc/nginx/sites-available/syncFF_conf
-chown 0 andromeda_backup/etc/nginx/sites-available/syncthing_conf
-chgrp 0 andromeda_backup/etc/nginx/sites-available/syncthing_conf
-touch -c -d "2017-11-02 17:32:04.1334235600" andromeda_backup/etc/nginx/sites-available/syncthing_conf
-chmod 0644 andromeda_backup/etc/nginx/sites-available/syncthing_conf
-chown 0 andromeda_backup/etc/nginx/sites-available/transmission_conf
-chgrp 0 andromeda_backup/etc/nginx/sites-available/transmission_conf
-touch -c -d "2017-11-02 17:32:04.1334235600" andromeda_backup/etc/nginx/sites-available/transmission_conf
-chmod 0644 andromeda_backup/etc/nginx/sites-available/transmission_conf
-chown 0 andromeda_backup/etc/resolv.conf
-chgrp 0 andromeda_backup/etc/resolv.conf
-touch -c -d "2017-11-02 17:32:04.3494292900" andromeda_backup/etc/resolv.conf
+chown 1000 andromeda_backup/etc/resolv.conf
+chgrp 1000 andromeda_backup/etc/resolv.conf
+touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/etc/resolv.conf
 chmod 0644 andromeda_backup/etc/resolv.conf
-chown 0 andromeda_backup/etc/samba/configs/smb_andromeda.conf
-chgrp 0 andromeda_backup/etc/samba/configs/smb_andromeda.conf
-touch -c -d "2017-11-02 17:32:04.0174204830" andromeda_backup/etc/samba/configs/smb_andromeda.conf
+chown 1000 andromeda_backup/etc/samba/configs/smb_andromeda.conf
+chgrp 1000 andromeda_backup/etc/samba/configs/smb_andromeda.conf
+touch -c -d "2019-07-09 17:38:16.7236545980" andromeda_backup/etc/samba/configs/smb_andromeda.conf
 chmod 0644 andromeda_backup/etc/samba/configs/smb_andromeda.conf
 chown 1000 andromeda_backup/home/kelghar/.tmux.conf
 chgrp 1000 andromeda_backup/home/kelghar/.tmux.conf
-touch -c -d "2017-11-02 17:32:04.4174310930" andromeda_backup/home/kelghar/.tmux.conf
+touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/home/kelghar/.tmux.conf
 chmod 0644 andromeda_backup/home/kelghar/.tmux.conf
 chown 1000 andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
 chgrp 1000 andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
-touch -c -d "2017-11-02 17:32:04.5774353380" andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
+touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
 chmod 0644 andromeda_backup/home/kelghar/.tmuxinator/andromeda.yml
 chown 1000 andromeda_backup/home/kelghar/.zshrc
 chgrp 1000 andromeda_backup/home/kelghar/.zshrc
-touch -c -d "2017-11-02 17:32:04.4654323670" andromeda_backup/home/kelghar/.zshrc
+touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/home/kelghar/.zshrc
 chmod 0644 andromeda_backup/home/kelghar/.zshrc
 chown 1000 andromeda_backup/home/kelghar/tc_mount.sh
 chgrp 1000 andromeda_backup/home/kelghar/tc_mount.sh
-touch -c -d "2017-11-02 17:32:04.5254339590" andromeda_backup/home/kelghar/tc_mount.sh
+touch -c -d "2019-03-18 18:12:58.0411858110" andromeda_backup/home/kelghar/tc_mount.sh
 chmod 0644 andromeda_backup/home/kelghar/tc_mount.sh
-chown 33 andromeda_backup/var/www/selfoss/config.ini
-chgrp 33 andromeda_backup/var/www/selfoss/config.ini
-touch -c -d "2017-11-02 17:32:04.6814380960" andromeda_backup/var/www/selfoss/config.ini
-chmod 0644 andromeda_backup/var/www/selfoss/config.ini
 chown 1000 backup_config.sh
 chgrp 1000 backup_config.sh
-touch -c -d "2017-11-02 17:31:53.1971333170" backup_config.sh
+touch -c -d "2019-07-09 18:05:46.9933608020" backup_config.sh
 chmod 0755 backup_config.sh
 chown 1000 cert/create_cert_files.sh
 chgrp 1000 cert/create_cert_files.sh
-touch -c -d "2017-11-02 17:29:32.6813716960" cert/create_cert_files.sh
+touch -c -d "2019-07-09 17:53:39.0651074650" cert/create_cert_files.sh
 chmod 0644 cert/create_cert_files.sh
-chown 1000 cert/folder_to_restore.list
-chgrp 1000 cert/folder_to_restore.list
-touch -c -d "2017-03-22 14:11:07.3864917040" cert/folder_to_restore.list
-chmod 0644 cert/folder_to_restore.list
 chown 1000 cert/multi.cfg
 chgrp 1000 cert/multi.cfg
-touch -c -d "2017-11-02 17:29:32.6813716960" cert/multi.cfg
+touch -c -d "2019-03-18 18:12:58.0411858110" cert/multi.cfg
 chmod 0644 cert/multi.cfg
 chown 1000 cubietruck_config.sublime-project
 chgrp 1000 cubietruck_config.sublime-project
-touch -c -d "2017-03-22 14:11:07.3904917040" cubietruck_config.sublime-project
+touch -c -d "2019-03-18 18:12:58.0411858110" cubietruck_config.sublime-project
 chmod 0644 cubietruck_config.sublime-project
 chown 1000 diverse_bash_scripts/create_mysql_user_and_database.sh
 chgrp 1000 diverse_bash_scripts/create_mysql_user_and_database.sh
-touch -c -d "2017-03-22 14:11:07.3904917040" diverse_bash_scripts/create_mysql_user_and_database.sh
+touch -c -d "2019-03-18 18:12:58.0411858110" diverse_bash_scripts/create_mysql_user_and_database.sh
 chmod 0644 diverse_bash_scripts/create_mysql_user_and_database.sh
 chown 1000 diverse_bash_scripts/find_large_git_files.sh
 chgrp 1000 diverse_bash_scripts/find_large_git_files.sh
-touch -c -d "2017-03-22 14:39:23.3865243300" diverse_bash_scripts/find_large_git_files.sh
+touch -c -d "2019-03-18 18:12:58.0411858110" diverse_bash_scripts/find_large_git_files.sh
 chmod 0755 diverse_bash_scripts/find_large_git_files.sh
 chown 1000 diverse_bash_scripts/get_colors_for_tmux.sh
 chgrp 1000 diverse_bash_scripts/get_colors_for_tmux.sh
-touch -c -d "2017-03-22 14:11:07.3904917040" diverse_bash_scripts/get_colors_for_tmux.sh
+touch -c -d "2019-03-18 18:12:58.0411858110" diverse_bash_scripts/get_colors_for_tmux.sh
 chmod 0644 diverse_bash_scripts/get_colors_for_tmux.sh
 chown 1000 diverse_bash_scripts/git-cache-meta.sh
 chgrp 1000 diverse_bash_scripts/git-cache-meta.sh
-touch -c -d "2017-11-02 17:32:04.7894409620" diverse_bash_scripts/git-cache-meta.sh
+touch -c -d "2019-07-09 18:00:27.8634794050" diverse_bash_scripts/git-cache-meta.sh
 chmod 0755 diverse_bash_scripts/git-cache-meta.sh
 chown 1000 diverse_bash_scripts/pyloadExtractAndMove.sh
 chgrp 1000 diverse_bash_scripts/pyloadExtractAndMove.sh
-touch -c -d "2017-03-22 14:11:07.3904917040" diverse_bash_scripts/pyloadExtractAndMove.sh
+touch -c -d "2019-03-18 18:12:58.0451858900" diverse_bash_scripts/pyloadExtractAndMove.sh
 chmod 0755 diverse_bash_scripts/pyloadExtractAndMove.sh
 chown 1000 diverse_bash_scripts/restoreConfig.sh
 chgrp 1000 diverse_bash_scripts/restoreConfig.sh
-touch -c -d "2017-03-22 14:11:07.3904917040" diverse_bash_scripts/restoreConfig.sh
+touch -c -d "2019-03-18 18:12:58.0451858900" diverse_bash_scripts/restoreConfig.sh
 chmod 0644 diverse_bash_scripts/restoreConfig.sh
 chown 1000 docker_configs/beets/.gitignore
 chgrp 1000 docker_configs/beets/.gitignore
-touch -c -d "2017-11-02 16:33:37.5554986390" docker_configs/beets/.gitignore
+touch -c -d "2019-03-18 18:12:58.0451858900" docker_configs/beets/.gitignore
 chmod 0644 docker_configs/beets/.gitignore
 chown 1000 docker_configs/beets/config.yaml
 chgrp 1000 docker_configs/beets/config.yaml
-touch -c -d "2017-11-02 16:33:25.2471684540" docker_configs/beets/config.yaml
+touch -c -d "2019-03-18 18:12:58.0451858900" docker_configs/beets/config.yaml
 chmod 0644 docker_configs/beets/config.yaml
-chown 0 docker_configs/dhcpd/dhcpd.conf
-chgrp 0 docker_configs/dhcpd/dhcpd.conf
-touch -c -d "2017-11-02 16:12:46.7899539190" docker_configs/dhcpd/dhcpd.conf
-chmod 0644 docker_configs/dhcpd/dhcpd.conf
+chown 1000 docker_configs/dnsmasq/dnsmasq.conf
+chgrp 1000 docker_configs/dnsmasq/dnsmasq.conf
+touch -c -d "2019-07-09 17:23:23.3013484670" docker_configs/dnsmasq/dnsmasq.conf
+chmod 0644 docker_configs/dnsmasq/dnsmasq.conf
+chown 1000 docker_configs/dnsmasq/hosts
+chgrp 1000 docker_configs/dnsmasq/hosts
+touch -c -d "2019-07-09 17:29:16.4609054400" docker_configs/dnsmasq/hosts
+chmod 0644 docker_configs/dnsmasq/hosts
 chown 2016 docker_configs/ffsync/.gitignore
 chgrp 2016 docker_configs/ffsync/.gitignore
-touch -c -d "2017-11-02 16:33:23.0991108300" docker_configs/ffsync/.gitignore
+touch -c -d "2019-07-09 15:44:56.6461122260" docker_configs/ffsync/.gitignore
 chmod 0644 docker_configs/ffsync/.gitignore
 chown 2016 docker_configs/ffsync/syncserver.ini
 chgrp 2016 docker_configs/ffsync/syncserver.ini
-touch -c -d "2017-11-02 16:33:23.0991108300" docker_configs/ffsync/syncserver.ini
-chmod 0666 docker_configs/ffsync/syncserver.ini
-chown 1000 docker_configs/mailserver/.gitignore
-chgrp 1000 docker_configs/mailserver/.gitignore
-touch -c -d "2017-11-02 16:31:21.6438527850" docker_configs/mailserver/.gitignore
-chmod 0644 docker_configs/mailserver/.gitignore
-chown 1000 docker_configs/mailserver/postfix-accounts.cf
-chgrp 1000 docker_configs/mailserver/postfix-accounts.cf
-touch -c -d "2017-11-02 16:33:24.2511417350" docker_configs/mailserver/postfix-accounts.cf
-chmod 0644 docker_configs/mailserver/postfix-accounts.cf
-chown 1000 docker_configs/photato/photato.ini
-chgrp 1000 docker_configs/photato/photato.ini
-touch -c -d "2017-11-02 14:50:10.1651481530" docker_configs/photato/photato.ini
-chmod 0644 docker_configs/photato/photato.ini
+touch -c -d "2019-07-09 12:51:53.1846953620" docker_configs/ffsync/syncserver.ini
+chmod 0644 docker_configs/ffsync/syncserver.ini
+chown 1000 docker_configs/openhab_conf/.gitignore
+chgrp 1000 docker_configs/openhab_conf/.gitignore
+touch -c -d "2019-07-09 17:04:32.5342783460" docker_configs/openhab_conf/.gitignore
+chmod 0644 docker_configs/openhab_conf/.gitignore
+chown 1000 docker_configs/openhab_conf/items/home.items
+chgrp 1000 docker_configs/openhab_conf/items/home.items
+touch -c -d "2019-07-09 15:56:31.6172851770" docker_configs/openhab_conf/items/home.items
+chmod 0644 docker_configs/openhab_conf/items/home.items
+chown 1000 docker_configs/openhab_conf/sitemaps/home.sitemap
+chgrp 1000 docker_configs/openhab_conf/sitemaps/home.sitemap
+touch -c -d "2019-07-09 15:56:35.9122445230" docker_configs/openhab_conf/sitemaps/home.sitemap
+chmod 0644 docker_configs/openhab_conf/sitemaps/home.sitemap
 chown 1000 docker_configs/pyload/.gitignore
 chgrp 1000 docker_configs/pyload/.gitignore
-touch -c -d "2017-11-02 16:33:37.5594987460" docker_configs/pyload/.gitignore
+touch -c -d "2019-07-09 17:04:32.5942788560" docker_configs/pyload/.gitignore
 chmod 0644 docker_configs/pyload/.gitignore
 chown 1000 docker_configs/pyload/SJ.txt
 chgrp 1000 docker_configs/pyload/SJ.txt
-touch -c -d "2017-11-02 16:33:37.5594987460" docker_configs/pyload/SJ.txt
+touch -c -d "2019-07-09 15:56:15.2061173840" docker_configs/pyload/SJ.txt
 chmod 0644 docker_configs/pyload/SJ.txt
 chown 1000 docker_configs/pyload/pyload.conf
 chgrp 1000 docker_configs/pyload/pyload.conf
-touch -c -d "2017-11-02 17:04:37.7213820600" docker_configs/pyload/pyload.conf
+touch -c -d "2019-07-09 17:28:22.7877409720" docker_configs/pyload/pyload.conf
 chmod 0600 docker_configs/pyload/pyload.conf
-chown 0 docker_configs/radicale/.gitignore
-chgrp 0 docker_configs/radicale/.gitignore
-touch -c -d "2017-11-02 16:27:13.8012047290" docker_configs/radicale/.gitignore
+chown 1000 docker_configs/radicale/.gitignore
+chgrp 1000 docker_configs/radicale/.gitignore
+touch -c -d "2019-07-09 15:44:56.6421122260" docker_configs/radicale/.gitignore
 chmod 0644 docker_configs/radicale/.gitignore
 chown 1000 docker_configs/radicale/config
 chgrp 1000 docker_configs/radicale/config
-touch -c -d "2017-11-02 16:27:25.2295112630" docker_configs/radicale/config
-chmod 0777 docker_configs/radicale/config
+touch -c -d "2019-07-09 12:51:52.6646832760" docker_configs/radicale/config
+chmod 0755 docker_configs/radicale/config
+chown 1000 docker_configs/selfoss/config.ini
+chgrp 1000 docker_configs/selfoss/config.ini
+touch -c -d "2019-07-09 17:28:22.7877409720" docker_configs/selfoss/config.ini
+chmod 0644 docker_configs/selfoss/config.ini
 chown 1000 docker_configs/syncthing/.gitignore
 chgrp 1000 docker_configs/syncthing/.gitignore
-touch -c -d "2017-11-02 16:24:56.4095196850" docker_configs/syncthing/.gitignore
+touch -c -d "2019-07-09 15:44:56.6501122260" docker_configs/syncthing/.gitignore
 chmod 0644 docker_configs/syncthing/.gitignore
 chown 1000 docker_configs/syncthing/config.xml
 chgrp 1000 docker_configs/syncthing/config.xml
-touch -c -d "2017-11-02 16:23:13.5227602480" docker_configs/syncthing/config.xml
-chmod 0600 docker_configs/syncthing/config.xml
+touch -c -d "2019-07-09 12:51:53.0526922950" docker_configs/syncthing/config.xml
+chmod 0644 docker_configs/syncthing/config.xml
+chown 1000 docker_configs/traefik/traefik.toml
+chgrp 1000 docker_configs/traefik/traefik.toml
+touch -c -d "2019-07-09 17:37:16.0777501880" docker_configs/traefik/traefik.toml
+chmod 0644 docker_configs/traefik/traefik.toml
 chown 1000 docker_configs/transmission/.gitignore
 chgrp 1000 docker_configs/transmission/.gitignore
-touch -c -d "2017-11-02 16:24:21.5125837360" docker_configs/transmission/.gitignore
+touch -c -d "2019-07-09 15:44:56.6461122260" docker_configs/transmission/.gitignore
 chmod 0644 docker_configs/transmission/.gitignore
 chown 1000 docker_configs/transmission/settings.json
 chgrp 1000 docker_configs/transmission/settings.json
-touch -c -d "2017-11-02 16:33:37.5594987460" docker_configs/transmission/settings.json
+touch -c -d "2019-07-09 17:28:22.7877409720" docker_configs/transmission/settings.json
 chmod 0600 docker_configs/transmission/settings.json
-chown 1000 metastore
-chgrp 1000 metastore
-touch -c -d "2017-03-22 14:11:07.3944917040" metastore
-chmod 0755 metastore
-chown 1000 metastore_file
-chgrp 1000 metastore_file
-touch -c -d "2017-03-22 14:11:07.3944917040" metastore_file
-chmod 0644 metastore_file
 chown 1000 permanent_configs/andromeda.fw
 chgrp 1000 permanent_configs/andromeda.fw
-touch -c -d "2017-03-22 14:11:07.3944917040" permanent_configs/andromeda.fw
+touch -c -d "2019-03-18 18:12:58.0451858900" permanent_configs/andromeda.fw
 chmod 0644 permanent_configs/andromeda.fw
 chown 1000 permanent_configs/home.iptables.fwb
 chgrp 1000 permanent_configs/home.iptables.fwb
-touch -c -d "2017-03-22 14:11:07.3944917040" permanent_configs/home.iptables.fwb
+touch -c -d "2019-03-18 18:12:58.0451858900" permanent_configs/home.iptables.fwb
 chmod 0644 permanent_configs/home.iptables.fwb
 chown 1000 permanent_configs/interfaces.andromeda
 chgrp 1000 permanent_configs/interfaces.andromeda
-touch -c -d "2017-03-22 14:11:07.3944917040" permanent_configs/interfaces.andromeda
+touch -c -d "2019-03-18 18:12:58.0451858900" permanent_configs/interfaces.andromeda
 chmod 0644 permanent_configs/interfaces.andromeda
 chown 1000 permanent_configs/iptables.allow.all.sh
 chgrp 1000 permanent_configs/iptables.allow.all.sh
-touch -c -d "2017-03-22 14:11:07.3944917040" permanent_configs/iptables.allow.all.sh
+touch -c -d "2019-03-18 18:12:58.0451858900" permanent_configs/iptables.allow.all.sh
 chmod 0644 permanent_configs/iptables.allow.all.sh
 chown 1000 permanent_configs/iptables.rules.andromeda
 chgrp 1000 permanent_configs/iptables.rules.andromeda
-touch -c -d "2017-03-22 14:11:07.3944917040" permanent_configs/iptables.rules.andromeda
+touch -c -d "2019-03-18 18:12:58.0451858900" permanent_configs/iptables.rules.andromeda
 chmod 0644 permanent_configs/iptables.rules.andromeda
 chown 1000 python_scripts/client.py
 chgrp 1000 python_scripts/client.py
-touch -c -d "2017-03-22 14:11:07.3944917040" python_scripts/client.py
+touch -c -d "2019-03-18 18:12:58.0451858900" python_scripts/client.py
 chmod 0644 python_scripts/client.py
+chown 1000 python_scripts/copy_pyload_extract.sh
+chgrp 1000 python_scripts/copy_pyload_extract.sh
+touch -c -d "2019-03-18 18:12:58.0451858900" python_scripts/copy_pyload_extract.sh
+chmod 0644 python_scripts/copy_pyload_extract.sh
 chown 1000 python_scripts/include_smb_config.py
 chgrp 1000 python_scripts/include_smb_config.py
-touch -c -d "2017-03-22 14:11:07.3944917040" python_scripts/include_smb_config.py
+touch -c -d "2019-03-18 18:12:58.0451858900" python_scripts/include_smb_config.py
 chmod 0644 python_scripts/include_smb_config.py
 chown 1000 python_scripts/pyload_extract.py
 chgrp 1000 python_scripts/pyload_extract.py
-touch -c -d "2017-05-24 16:46:54.2791404150" python_scripts/pyload_extract.py
+touch -c -d "2019-03-18 18:12:58.0451858900" python_scripts/pyload_extract.py
 chmod 0644 python_scripts/pyload_extract.py
 chown 1000 python_scripts/server.py
 chgrp 1000 python_scripts/server.py
-touch -c -d "2017-03-22 14:11:07.3984917040" python_scripts/server.py
+touch -c -d "2019-03-18 18:12:58.0451858900" python_scripts/server.py
 chmod 0644 python_scripts/server.py
 chown 1000 restore_config.sh
 chgrp 1000 restore_config.sh
-touch -c -d "2017-03-22 14:11:07.3984917040" restore_config.sh
+touch -c -d "2019-03-18 18:12:58.0451858900" restore_config.sh
 chmod 0644 restore_config.sh
 chown 1000 tmux-mem-cpu-load
 chgrp 1000 tmux-mem-cpu-load
-touch -c -d "2017-03-22 14:11:07.3984917040" tmux-mem-cpu-load
+touch -c -d "2019-03-18 18:12:58.0451858900" tmux-mem-cpu-load
 chmod 0755 tmux-mem-cpu-load
