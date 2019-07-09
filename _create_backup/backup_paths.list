@@ -1,13 +1,7 @@
-/etc/bind/
 /etc/hostname
 /etc/hosts
 /etc/network/interfaces
 /etc/samba/configs/
-/etc/cron-apt/
-/etc/nginx/sites-available/
-/etc/nginx/fcgi.conf
-/etc/nginx/fastcgi_params
-/etc/nginx/conf.d/
 /etc/resolv.conf
 /etc/aliases
 /home/kelghar/.tmux.conf
@@ -15,4 +9,3 @@
 /home/kelghar/tc_mount.sh
 /home/kelghar/.tmuxinator/
 /home/kelghar/.vimrc
-/var/www/selfoss/config.ini
