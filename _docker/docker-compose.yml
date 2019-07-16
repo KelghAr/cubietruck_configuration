@@ -48,8 +48,8 @@ services:
     dns: [8.8.8.8]
     environment: ['DOCKUID=${USERMAP_UID}', 'DOCKGID=${USERMAP_GID}']
     image: digrouz/docker-alp-pyload:latest
-    labels: ['traefik.frontend.rule=Host:pyload.${TRAEFIK_DOMAIN}',
-      traefik.enable=true, traefik.pyload.port=8000, traefik.onclick.port=9666]
+    labels: [traefik.backend=pyload, 'traefik.frontend.rule=Host:pyload.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8000]
     networks: [webgateway]
     ports: ['7227:7227', '8000:8000', '9666:9666']
     volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config',
@@ -89,6 +89,8 @@ services:
     command: --api --docker --docker.domain=${TRAEFIK_DOMAIN} --logLevel=INFO
     container_name: traefik
     image: traefik:alpine
+    labels: [traefik.backend=dashboard, 'traefik.frontend.rule=Host:dashboard.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8081]
     networks: [webgateway]
     ports: ['80:80', '443:443', '8081:8080']
     volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml:ro', '/var/run/docker.sock:/var/run/docker.sock',
@@ -96,6 +98,7 @@ services:
   transmission:
     container_name: transmission
     depends_on: [traefik]
+    dns: [8.8.8.8]
     environment: [TZ=Europe/Berlin, 'PUID=${USERMAP_UID}', 'PGID=${USERMAP_GID}']
     image: linuxserver/transmission:latest
     labels: [traefik.backend=transmission, 'traefik.frontend.rule=Host:transmission.${TRAEFIK_DOMAIN}',
