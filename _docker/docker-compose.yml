@@ -20,6 +20,20 @@ services:
     networks: [webgateway]
     ports: ['5000:5000']
     volumes: ['${DOCKER_CONFIG}/ffsync:/home/ffsync']
+  openhab:
+    container_name: openhab
+    depends_on: [traefik]
+    dns: [8.8.8.8]
+    environment: {EXTRA_JAVA_OPTS: -Duser.timezone=Europe/Berlin, GROUP_ID: '${USERMAP_GID}',
+      OPENHAB_HTTPS_PORT: '8443', OPENHAB_HTTP_PORT: '8084', USER_ID: '${USERMAP_UID}'}
+    image: openhab/openhab:2.4.0
+    labels: [traefik.backend=openhab, 'traefik.frontend.rule=Host:openhab.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=8084]
+    networks: [webgateway]
+    ports: ['8084:8084', '1883:1883']
+    volumes: ['/etc/localtime:/etc/localtime:ro', '/etc/timezone:/etc/timezone:ro',
+      '${MOUNT_POINT}/openhab/addons:/openhab/addons', '${DOCKER_CONFIG}/openhab_conf:/openhab/conf',
+      '${MOUNT_POINT}/openhab/userdata:/openhab/userdata']
   portainer:
     container_name: portainer
     depends_on: [traefik]
@@ -34,8 +48,8 @@ services:
     dns: [8.8.8.8]
     environment: ['DOCKUID=${USERMAP_UID}', 'DOCKGID=${USERMAP_GID}']
     image: digrouz/docker-alp-pyload:latest
-    labels: [traefik.backend=pyload, 'traefik.frontend.rule=Host:pyload.${TRAEFIK_DOMAIN}',
-      traefik.enable=true, traefik.port=8000]
+    labels: ['traefik.frontend.rule=Host:pyload.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.pyload.port=8000, traefik.onclick.port=9666]
     networks: [webgateway]
     ports: ['7227:7227', '8000:8000', '9666:9666']
     volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config',
@@ -95,25 +109,4 @@ services:
     container_name: watchtower
     image: v2tec/watchtower
     volumes: ['/var/run/docker.sock:/var/run/docker.sock']
-  openhab:
-    container_name: openhab
-    image: "openhab/openhab:2.4.0"
-    depends_on: [traefik]
-    labels: [traefik.backend=openhab, 'traefik.frontend.rule=Host:openhab.${TRAEFIK_DOMAIN}',
-      traefik.enable=true, traefik.port=8084]
-    dns: [8.8.8.8]
-    networks: [webgateway]
-    ports: ['8084:8084', '1883:1883']
-    volumes:
-      - "/etc/localtime:/etc/localtime:ro"
-      - "/etc/timezone:/etc/timezone:ro"
-      - "${MOUNT_POINT}/openhab/addons:/openhab/addons"
-      - "${DOCKER_CONFIG}/openhab_conf:/openhab/conf"
-      - "${MOUNT_POINT}/openhab/userdata:/openhab/userdata"
-    environment:
-      OPENHAB_HTTP_PORT: "8084"
-      OPENHAB_HTTPS_PORT: "8443"
-      EXTRA_JAVA_OPTS: "-Duser.timezone=Europe/Berlin"
-      USER_ID: ${USERMAP_UID}
-      GROUP_ID: ${USERMAP_GID}
 version: '3.0'
