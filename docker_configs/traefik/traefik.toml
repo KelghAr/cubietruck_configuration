@@ -16,6 +16,11 @@ defaultEntryPoints = ["http", "https"]
 # Optional
 # Default:
 [entryPoints]
+  [entryPoints.dashboard]
+    address = ":8080"
+    [entryPoints.dashboard.auth]
+      [entryPoints.dashboard.auth.basic]
+        users = ["kelghar:98fa6d832ba5cfd21399caaa0267f09a"]
   [entryPoints.http]
   address = ":80"
     [entryPoints.http.redirect]
@@ -26,9 +31,10 @@ defaultEntryPoints = ["http", "https"]
     [[entryPoints.https.tls.certificates]]
       certFile = "/certs/server.crt"
       keyFile = "/certs/server.key"
+
 # Enable API and dashboard
 [api]
-entryPoint = "traefik"
+entryPoint = "dashboard"
 dashboard = true
 
 ################################################################
