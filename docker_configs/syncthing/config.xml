@@ -45,7 +45,6 @@
     </folder>
     <folder id="kwtsc-wb7np" label="Security Essentials" path="/sync/security-essentials/" type="sendreceive" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="FXBDEMS-BJIEZCD-X6BFC5Z-4GVD5YL-DRZORF7-JTMBLKN-CCZXVW6-M4DN2QG" introducedBy=""></device>
         <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" introducedBy=""></device>
         <device id="QVXZZHS-Q5ZVD24-44GZOG5-7JOHXOT-M2A57G5-IRZQVDK-EOOCIKT-6E7BYQ5" introducedBy=""></device>
         <device id="SPDMZOS-IKS2B7U-JWH2BTA-SUIRIFX-2AW7IJ5-4EUGYB4-6FTALSJ-PGKB7QE" introducedBy=""></device>
@@ -68,11 +67,11 @@
         <markerName>.stfolder</markerName>
         <copyOwnershipFromParent>false</copyOwnershipFromParent>
     </folder>
-    <folder id="motoe24g-lte-Bilder" label="Kamera" path="/sync/Bilder/Kamera/" type="sendreceive" rescanIntervalS="60" fsWatcherEnabled="false" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="moto_g_5s-Bilder" label="Kamera" path="/sync/Bilder/Kamera/" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="FXBDEMS-BJIEZCD-X6BFC5Z-4GVD5YL-DRZORF7-JTMBLKN-CCZXVW6-M4DN2QG" introducedBy=""></device>
+        <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" introducedBy=""></device>
+        <device id="QVXZZHS-Q5ZVD24-44GZOG5-7JOHXOT-M2A57G5-IRZQVDK-EOOCIKT-6E7BYQ5" introducedBy=""></device>
         <device id="V4THDEP-RQD6NDD-2UOMWTL-SO2IUUC-XKXGHN5-THNNVQE-NX4LSB4-CFBWGAV" introducedBy=""></device>
-        <device id="3QPLZUH-4OQAFMY-77BF5YO-3LSHM23-FPGPLXM-JCUT6EC-SJQ54KG-XUJ4IA2" introducedBy=""></device>
         <minDiskFree unit="%">1</minDiskFree>
         <versioning></versioning>
         <copiers>0</copiers>
@@ -134,14 +133,6 @@
         <markerName>.stfolder</markerName>
         <copyOwnershipFromParent>false</copyOwnershipFromParent>
     </folder>
-    <device id="FXBDEMS-BJIEZCD-X6BFC5Z-4GVD5YL-DRZORF7-JTMBLKN-CCZXVW6-M4DN2QG" name="MotoE2(4G-LTE)" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
-        <address>dynamic</address>
-        <paused>false</paused>
-        <autoAcceptFolders>false</autoAcceptFolders>
-        <maxSendKbps>0</maxSendKbps>
-        <maxRecvKbps>0</maxRecvKbps>
-        <maxRequestKiB>0</maxRequestKiB>
-    </device>
     <device id="KLMPJ4Y-GDRTPCX-2276D2R-6FSHPTN-IHX7NUF-727JLG4-U52YWP3-2YN7MAZ" name="Ursa-Minor" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
