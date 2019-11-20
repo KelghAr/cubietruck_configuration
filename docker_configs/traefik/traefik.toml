@@ -17,7 +17,7 @@ defaultEntryPoints = ["http", "https"]
 # Default:
 [entryPoints]
   [entryPoints.dashboard]
-    address = ":8080"
+    address = ":8081"
     [entryPoints.dashboard.auth]
       [entryPoints.dashboard.auth.basic]
         users = ["kelghar:98fa6d832ba5cfd21399caaa0267f09a"]

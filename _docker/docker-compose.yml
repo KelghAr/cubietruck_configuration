@@ -92,7 +92,7 @@ services:
     labels: [traefik.backend=dashboard, 'traefik.frontend.rule=Host:dashboard.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=8081]
     networks: [webgateway]
-    ports: ['80:80', '443:443', '8081:8080']
+    ports: ['80:80', '443:443', '8081:8081']
     volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml:ro', '/var/run/docker.sock:/var/run/docker.sock',
       '${DOCKER_CONFIG}/traefik/certs:/certs']
   transmission:
