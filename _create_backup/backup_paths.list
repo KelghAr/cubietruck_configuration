@@ -3,7 +3,6 @@
 /etc/network/interfaces
 /etc/samba/configs/
 /etc/resolv.conf
-/etc/aliases
 /home/kelghar/.tmux.conf
 /home/kelghar/.zshrc
 /home/kelghar/tc_mount.sh
