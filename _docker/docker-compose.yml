@@ -46,14 +46,13 @@ services:
     container_name: pyload
     depends_on: [traefik]
     dns: [8.8.8.8]
-    environment: ['DOCKUID=${USERMAP_UID}', 'DOCKGID=${USERMAP_GID}']
-    image: digrouz/docker-alp-pyload:latest
+    environment: ['PUID=${USERMAP_UID}', 'PGID=${USERMAP_GID}', TZ=Europe/Berlin]
+    image: linuxserver/pyload:latest
     labels: [traefik.backend=pyload, 'traefik.frontend.rule=Host:pyload.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=8000]
     networks: [webgateway]
     ports: ['7227:7227', '8000:8000', '9666:9666']
-    volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config',
-      '/etc/localtime:/etc/localtime:ro']
+    volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config']
   radicale:
     container_name: radicale
     depends_on: [traefik]
