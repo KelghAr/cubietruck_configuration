@@ -52,7 +52,7 @@ services:
       traefik.enable=true, traefik.port=8000]
     networks: [webgateway]
     ports: ['7227:7227', '8000:8000', '9666:9666']
-    volumes: ['/home/kelghar/mount_point/share/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config']
+    volumes: ['${MOUNT_POINT}/pyload:/downloads', '${DOCKER_CONFIG}/pyload:/config']
   radicale:
     container_name: radicale
     depends_on: [traefik]
@@ -83,7 +83,7 @@ services:
       traefik.enable=true, traefik.port=8384]
     networks: [webgateway]
     ports: ['8384:8384', '22000:22000', '21027:21027/udp']
-    volumes: ['${DOCKER_CONFIG}/syncthing:/config', '/home/kelghar/mount_point/share/_syncthing:/sync']
+    volumes: ['${DOCKER_CONFIG}/syncthing:/config', '${MOUNT_POINT}/_syncthing:/sync']
   traefik:
     command: --api --docker --docker.domain=${TRAEFIK_DOMAIN} --logLevel=INFO
     container_name: traefik
@@ -104,8 +104,8 @@ services:
       traefik.enable=true, traefik.port=9091]
     networks: [webgateway]
     ports: ['9091:9091', '51413:51413', '51413:51413/udp']
-    volumes: ['${DOCKER_CONFIG}/transmission:/config', '/home/kelghar/mount_point/share/_transmission/incoming:/downloads',
-      '/home/kelghar/mount_point/share/_transmission/watch:/watch']
+    volumes: ['${DOCKER_CONFIG}/transmission:/config', '${MOUNT_POINT}/_transmission/incoming:/downloads',
+      '${MOUNT_POINT}/_transmission/watch:/watch']
   watchtower:
     command: --cleanup --schedule "0 23 * * *"
     container_name: watchtower
