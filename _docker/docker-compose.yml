@@ -41,7 +41,7 @@ services:
     image: pihole/pihole:latest
     labels: [traefik.backend=pihole, 'traefik.frontend.rule=Host:pihole.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=4242]
-    ports: ['53:53/tcp', '53:53/udp', '67:67/udp', '4242:80/tcp', '4243:443/tcp']
+    ports: ['1053:53/tcp', '1053:53/udp', '1067:67/udp', '4242:80/tcp', '4243:443/tcp']
     restart: unless-stopped
     volumes: ['${DOCKER_CONFIG}/pihole_etc:/etc/pihole/', '${DOCKER_CONFIG}/pihole_dnsmasq:/etc/dnsmasq.d/']
   portainer:
