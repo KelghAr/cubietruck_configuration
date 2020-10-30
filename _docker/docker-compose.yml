@@ -35,16 +35,17 @@ services:
       '${MOUNT_POINT}/openhab/addons:/openhab/addons', '${DOCKER_CONFIG}/openhab_conf:/openhab/conf',
       '${MOUNT_POINT}/openhab/userdata:/openhab/userdata']
   pihole:
-      #cap_add: [NET_ADMIN]
+    #cap_add: [NET_ADMIN]
     container_name: pihole
-    environment: {TZ: Europe/Berlin}
     depends_on: [traefik]
+    environment: {ServerIP: 192.168.2.42, TZ: Europe/Berlin, WEBPASSWORD: PASSWORD}
     image: pihole/pihole:latest
     labels: [traefik.backend=pihole, 'traefik.frontend.rule=Host:pihole.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=42424]
-    ports: ['1053:53/tcp', '1053:53/udp', '1067:67/udp', '42424:80/tcp', '42434:443/tcp']
-    restart: unless-stopped
     networks: [webgateway]
+    ports: ['127.0.0.1:1053:53/tcp', '127.0.0.1:1053:53/udp', '1067:67/udp', '42424:80/tcp',
+      '42434:443/tcp']
+    restart: unless-stopped
     volumes: ['${DOCKER_CONFIG}/pihole_etc:/etc/pihole/', '${DOCKER_CONFIG}/pihole_dnsmasq:/etc/dnsmasq.d/']
   portainer:
     container_name: portainer
