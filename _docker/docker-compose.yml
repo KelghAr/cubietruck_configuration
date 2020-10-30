@@ -34,6 +34,16 @@ services:
     volumes: ['/etc/localtime:/etc/localtime:ro', '/etc/timezone:/etc/timezone:ro',
       '${MOUNT_POINT}/openhab/addons:/openhab/addons', '${DOCKER_CONFIG}/openhab_conf:/openhab/conf',
       '${MOUNT_POINT}/openhab/userdata:/openhab/userdata']
+  pihole:
+    cap_add: [NET_ADMIN]
+    container_name: pihole
+    environment: {TZ: Europe/Berlin}
+    image: pihole/pihole:latest
+    labels: [traefik.backend=pihole, 'traefik.frontend.rule=Host:pihole.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=4242]
+    ports: ['53:53/tcp', '53:53/udp', '67:67/udp', '4242:80/tcp', '4243:443/tcp']
+    restart: unless-stopped
+    volumes: ['${DOCKER_CONFIG}/pihole_etc:/etc/pihole/', '${DOCKER_CONFIG}/pihole_dnsmasq:/etc/dnsmasq.d/']
   portainer:
     container_name: portainer
     depends_on: [traefik]
@@ -106,28 +116,6 @@ services:
     ports: ['9091:9091', '51413:51413', '51413:51413/udp']
     volumes: ['${DOCKER_CONFIG}/transmission:/config', '${MOUNT_POINT}/_transmission/incoming:/downloads',
       '${MOUNT_POINT}/_transmission/watch:/watch']
-    pihole:
-        container_name: pihole
-        image: pihole/pihole:latest
-        ports:
-          - "53:53/tcp"
-          - "53:53/udp"
-          - "67:67/udp"
-          - "4242:80/tcp"
-          - "4243:443/tcp"
-        environment:
-          TZ: 'Europe/Berlin'
-          # WEBPASSWORD: 'set a secure password here or it will be random'
-        # Volumes store your data between container upgrades
-        volumes: ['${DOCKER_CONFIG}/pihole_etc:/etc/pihole/', '${DOCKER_CONFIG}/pihole_dnsmasq:/etc/dnsmasq.d/']
-        # Recommended but not required (DHCP needs NET_ADMIN)
-        #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
-        cap_add:
-          - NET_ADMIN
-        restart: unless-stopped
-        #network_mode: host
-
-
   watchtower:
     command: --cleanup --schedule "0 23 * * *"
     container_name: watchtower
