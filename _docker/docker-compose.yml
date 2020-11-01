@@ -10,10 +10,9 @@ services:
     command: [-id, eno1, -iu, br_pihole, 172.18.0.100]
     container_name: dhcprelay
     image: modem7/dhcprelay:latest
-    mem_limit: 20m
-    mem_reservation: 5m
     network_mode: host
     restart: always
+    dns: [8.8.8.8]
   dnsmasq:
     container_name: dnsmasq
     environment: [HTTP_USER=kelghar, HTTP_PASS=Bigfoot]
@@ -51,14 +50,16 @@ services:
     cap_add: [NET_ADMIN]
     container_name: pihole
     depends_on: [traefik, dhcprelay]
+    dns: [8.8.8.8]
     environment: {DNS1: 1.1.1.1, DNS2: 1.0.0.1, DNSMASQ_LISTENING: all, ServerIP: 192.168.2.42,
       TZ: Europe/Berlin, VIRTUAL_HOST: pihole, WEBPASSWORD: Bigfoot}
     image: pihole/pihole:latest
     labels: [traefik.backend=pihole, 'traefik.frontend.rule=Host:pihole.${TRAEFIK_DOMAIN}',
-      traefik.enable=true, traefik.port=42424]
+      traefik.enable=true, traefik.port=42424, "traefik.tcp.routers.dns.entrypoints=dns", "traefik.tcp.routers.dns.service=pihole", "traefik.tcp.services.pihole.loadbalancer.server.port=53", 
+      "traefik.udp.routers.dns-udp.entrypoints=dns-udp", "traefik.udp.routers.dns-udp.service=pihole", "traefik.udp.services.pihole.loadbalancer.server.port=53"]
     networks:
       webgateway: {ipv4_address: 172.18.0.100}
-    ports: ['53:53/tcp', '53:53/udp', '67:67/udp', '42424:80/tcp']
+    ports: ['5353:53/tcp', '5453:53/udp', '67:67/udp', '42424:80/tcp']
     restart: unless-stopped
     volumes: ['${DOCKER_CONFIG}/pihole_etc:/etc/pihole/', '${DOCKER_CONFIG}/pihole_dnsmasq:/etc/dnsmasq.d/']
   portainer:
@@ -113,13 +114,13 @@ services:
     ports: ['8384:8384', '22000:22000', '21027:21027/udp']
     volumes: ['${DOCKER_CONFIG}/syncthing:/config', '${MOUNT_POINT}/_syncthing:/sync']
   traefik:
-    command: --api --docker --docker.domain=${TRAEFIK_DOMAIN} --logLevel=INFO
+    command: --api --docker --docker.domain=${TRAEFIK_DOMAIN} --logLevel=INFO #--entrypoints.dns.address=:53/tcp --entrypoints.dns-udp.address=:53/udp
     container_name: traefik
     image: traefik:alpine
     labels: [traefik.backend=dashboard, 'traefik.frontend.rule=Host:dashboard.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=8081]
     networks: [webgateway]
-    ports: ['80:80', '443:443', '8081:8081', '53:53/tcp', '53:53/udp']
+    ports: ['80:80', '443:443', '8081:8081'] #, '53:53/tcp', '53:53/udp']
     volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml:ro', '/var/run/docker.sock:/var/run/docker.sock',
       '${DOCKER_CONFIG}/traefik/certs:/certs']
   transmission:
