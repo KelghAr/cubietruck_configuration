@@ -1,6 +1,19 @@
 networks:
-  webgateway: {driver: bridge}
+  webgateway:
+    driver: bridge
+    ipam:
+      config:
+      - {subnet: 172.18.0.0/16}
 services:
+  dhcprelay:
+    cap_add: [NET_ADMIN]
+    command: [-id, eno1, -iu, br_pihole, 172.18.0.100]
+    container_name: dhcprelay
+    image: modem7/dhcprelay:latest
+    mem_limit: 20m
+    mem_reservation: 5m
+    network_mode: host
+    restart: always
   dnsmasq:
     container_name: dnsmasq
     environment: [HTTP_USER=kelghar, HTTP_PASS=Bigfoot]
@@ -36,15 +49,16 @@ services:
       '${MOUNT_POINT}/openhab/userdata:/openhab/userdata']
   pihole:
     cap_add: [NET_ADMIN]
-    network_mode: host
     container_name: pihole
-    depends_on: [traefik]
-    environment: {ServerIP: 192.168.2.42, TZ: Europe/Berlin, WEBPASSWORD: PASSWORD}
+    depends_on: [traefik, dhcprelay]
+    environment: {DNS1: 1.1.1.1, DNS2: 1.0.0.1, DNSMASQ_LISTENING: all, ServerIP: 192.168.2.42,
+      TZ: Europe/Berlin, VIRTUAL_HOST: pihole, WEBPASSWORD: Bigfoot}
     image: pihole/pihole:latest
-    #labels: [traefik.backend=pihole, 'traefik.frontend.rule=Host:pihole.${TRAEFIK_DOMAIN}',
-    #  traefik.enable=true, traefik.port=42424]
-    #networks: [webgateway]
-    ports: ['53:53/tcp', '53:53/udp', '67:67/udp', '80:42424/tcp']
+    labels: [traefik.backend=pihole, 'traefik.frontend.rule=Host:pihole.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=42424]
+    networks:
+      webgateway: {ipv4_address: 172.18.0.100}
+    ports: ['53:53/tcp', '53:53/udp', '67:67/udp', '42424:80/tcp']
     restart: unless-stopped
     volumes: ['${DOCKER_CONFIG}/pihole_etc:/etc/pihole/', '${DOCKER_CONFIG}/pihole_dnsmasq:/etc/dnsmasq.d/']
   portainer:
@@ -54,6 +68,7 @@ services:
     labels: [traefik.backend=portainer, 'traefik.frontend.rule=Host:portainer.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=9000]
     networks: [webgateway]
+    ports: ['9000:9000']
     volumes: ['/var/run/docker.sock:/var/run/docker.sock', '/home/kelghar/.portainer:/data']
   pyload:
     container_name: pyload
@@ -104,7 +119,7 @@ services:
     labels: [traefik.backend=dashboard, 'traefik.frontend.rule=Host:dashboard.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=8081]
     networks: [webgateway]
-    ports: ['80:80', '443:443', '8081:8081']
+    ports: ['80:80', '443:443', '8081:8081', 53:53/tcp, 53:53/udp]
     volumes: ['${DOCKER_CONFIG}/traefik/traefik.toml:/traefik.toml:ro', '/var/run/docker.sock:/var/run/docker.sock',
       '${DOCKER_CONFIG}/traefik/certs:/certs']
   transmission:
