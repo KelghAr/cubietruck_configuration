@@ -20,7 +20,7 @@ services:
     network_mode: host
     ports: ['5380:8080', '53:53/udp', '67:67/udp']
     privileged: true
-    volumes: ['${DOCKER_CONFIG}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf', '${DOCKER_CONFIG}/dnsmasq/hosts:/etc/hosts']
+    volumes: ['${DOCKER_CONFIG}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf', '${DOCKER_CONFIG}/dnsmasq/hosts:/etc/hosts', '${DOCKER_CONFIG}/dnsmasq/dnsmasq.blacklist.txt:/etc/dnsmasq.blacklist.txt']
   ffsync:
     container_name: ffsync
     depends_on: [traefik]

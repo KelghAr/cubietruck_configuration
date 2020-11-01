@@ -20,3 +20,6 @@ sftp-config.json
 
 # Traefik cert files
 docker_configs/traefik/certs
+
+# Ab blacklist
+docker_configs/dnsmasq/dnsmasq.blacklist.txt
