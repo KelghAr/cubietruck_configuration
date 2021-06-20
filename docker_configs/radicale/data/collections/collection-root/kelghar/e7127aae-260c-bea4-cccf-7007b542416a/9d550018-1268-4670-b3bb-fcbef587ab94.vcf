@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:4.0
+PRODID:-//Thunderbird.net/NONSGML Thunderbird CardBook V58.3//EN-US
+UID:9d550018-1268-4670-b3bb-fcbef587ab94
+ADR;TYPE=HOME:;;Marienburger Weg 8;Diedorf;;86420;Germany
+BDAY:19700220
+CATEGORIES:Arbeit
+EMAIL;TYPE=HOME:email@christian-hummel.de
+FN:Christian Hummel
+GENDER:M
+N:Hummel;Christian;;;
+REV:20210429T092731Z
+TEL;TYPE=CELL:+49 176 46572155
+END:VCARD

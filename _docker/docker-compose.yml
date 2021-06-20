@@ -58,12 +58,12 @@ services:
   radicale:
     container_name: radicale
     depends_on: [traefik]
-    image: rdissertori/docker-radicale
+    image: tomsquest/docker-radicale
     labels: [traefik.backend=radicale, 'traefik.frontend.rule=Host:radicale.${TRAEFIK_DOMAIN}',
       traefik.enable=true, traefik.port=5232]
     networks: [webgateway]
     ports: ['5232:5232']
-    volumes: ['${DOCKER_CONFIG}/radicale:/data/radicale']
+    volumes: ['${DOCKER_CONFIG}/radicale/data:/data', '${DOCKER_CONFIG}/radicale/config:/config:ro']
   selfoss:
     container_name: selfoss
     depends_on: [traefik]

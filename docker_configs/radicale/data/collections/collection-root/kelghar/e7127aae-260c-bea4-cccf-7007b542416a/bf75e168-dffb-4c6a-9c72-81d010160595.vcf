@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:4.0
+PRODID:-//Thunderbird.net/NONSGML Thunderbird CardBook V58.3//EN-US
+UID:bf75e168-dffb-4c6a-9c72-81d010160595
+ADR;TYPE=HOME:;;Hohenstaufenstr. 34;Augsburg;;86199;Germany
+BDAY:19600516
+CATEGORIES:Arbeit
+EMAIL;TYPE=HOME:ralph@luennemann-home.de
+FN:Ralph Lünnemann
+GENDER:M
+N:Lünnemann;Ralph;;;
+REV:20210429T090804Z
+TEL;TYPE=CELL:+49 172 2358030
+TEL;TYPE=HOME:+49 82 15897399
+END:VCARD

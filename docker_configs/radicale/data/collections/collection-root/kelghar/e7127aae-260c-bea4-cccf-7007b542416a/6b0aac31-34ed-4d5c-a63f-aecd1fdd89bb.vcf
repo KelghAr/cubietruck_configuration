@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:4.0
+PRODID:-//Thunderbird.net/NONSGML Thunderbird CardBook V58.3//EN-US
+UID:6b0aac31-34ed-4d5c-a63f-aecd1fdd89bb
+ADR;TYPE=HOME:;;Grüntenstr. 5c;Stadtbergen;;86391;Germany
+BDAY:19690920
+CATEGORIES:Arbeit
+EMAIL;TYPE=HOME:alexander.weber@kastaban.de
+FN:Alexander Weber
+GENDER:M
+N:Weber;Alexander;;;
+REV:20210429T091236Z
+TEL;TYPE=CELL:+49 1520 6528942
+TEL;TYPE=HOME:+49 821 2432223
+END:VCARD

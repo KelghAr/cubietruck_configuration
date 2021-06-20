@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//dmfs.org//mimedir.vcard//EN
+UID:e26265dd-dfc9-4f5f-babb-0d5a00f57527
+ADR;TYPE=HOME:;;Paarangerweg 23;Mering;Bayern;86415;Deutschland
+BDAY:1991-02-28
+EMAIL;TYPE=WORK:alexandria@gmx.de
+FN:Alexandra Hut
+N:Hut;Alexandra;;;
+REV:20210504T111714Z
+TEL;TYPE=CELL:+4917630448189
+TEL;TYPE=HOME:+4982332117748
+X-RADICALE-NAME:e26265dd-dfc9-4f5f-babb-0d5a00f57527.vcf
+X-THUNDERBIRD-ETAG:"d0320cbb5ba4bff89a448acbb8dfdc43"
+END:VCARD

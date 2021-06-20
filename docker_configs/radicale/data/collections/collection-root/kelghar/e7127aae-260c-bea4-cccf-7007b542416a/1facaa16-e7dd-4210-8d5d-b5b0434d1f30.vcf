@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:4.0
+PRODID:-//Thunderbird.net/NONSGML Thunderbird CardBook V58.3//EN-US
+UID:1facaa16-e7dd-4210-8d5d-b5b0434d1f30
+ADR;TYPE=HOME:;;Finkenstrasse 5;Aindling;Bayern;86447;Deutschland
+BDAY:19840819
+CATEGORIES:Arbeit
+EMAIL;TYPE=HOME:markus1908@gmx.net
+EMAIL;TYPE=HOME:stemmer.ma@gmail.com
+FN:Markus Stemmer
+GENDER:M
+N:Stemmer;Markus;;;
+REV:20210429T092746Z
+TEL;TYPE=CELL:+49 171 2344331
+END:VCARD

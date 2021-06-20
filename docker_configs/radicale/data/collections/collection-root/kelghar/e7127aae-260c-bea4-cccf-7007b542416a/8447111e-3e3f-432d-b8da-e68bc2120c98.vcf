@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//dmfs.org//mimedir.vcard//EN
+UID:8447111e-3e3f-432d-b8da-e68bc2120c98
+ADR;TYPE=HOME:;;Bachstraße 9a;Mering;;86415;Germany
+BDAY:1988-06-13
+CATEGORIES:Leutz
+EMAIL;TYPE=HOME:johannes.leimer@gmail.com
+EMAIL;TYPE=HOME:johannes@johannes-leimer.de
+EMAIL;TYPE=WORK:johannes.leimer@tngtech.com
+FN:Johannes Leimer
+N:Leimer;Johannes;;;
+REV:2021-04-29T10:52:37Z
+TEL;TYPE=WORK:+49 174 3401838
+X-RADICALE-NAME:8447111e-3e3f-432d-b8da-e68bc2120c98.vcf
+X-THUNDERBIRD-ETAG:"6b0e25d5e34d447fcfa2c9944c6db459"
+END:VCARD
