@@ -1,6 +1,6 @@
 #!/bin/bash
 #This will run Restic backups and remove snapshots according to a policy
-export RESTIC_REPOSITORY=rclone:nextcloud:backup_andromeda
+export RESTIC_REPOSITORY=rclone:googledrive:backup_andromeda
 export RESTIC_PASSWORD_FILE=/home/kelghar/.restic/passwd
 BACKUP_BASEPATH=/home/kelghar/mount_point/share
 # need to securely provide password: https://restic.readthedocs.io/en/latest/faq.html#how-can-i-specify-encryption-passwords-automatically

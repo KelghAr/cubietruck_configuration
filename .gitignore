@@ -25,3 +25,4 @@ docker_configs/traefik/certs
 docker_configs/dnsmasq/dnsmasq.blacklist.txt
 
 docker_configs/radicale_old
+docker_configs/radicale/data/

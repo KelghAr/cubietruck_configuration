@@ -113,4 +113,15 @@ services:
     container_name: watchtower
     image: v2tec/watchtower
     volumes: ['/var/run/docker.sock:/var/run/docker.sock']
+  openvpn:
+    cap_add: 
+      - NET_ADMIN
+        #network_mode: host
+    image: kylemanna/openvpn
+    container_name: openvpn
+    ports: ['1194:1194/udp']
+    restart: always
+    labels: [traefik.backend=openvpn, 'traefik.frontend.rule=Host:openvpn.${TRAEFIK_DOMAIN}',
+      traefik.enable=true, traefik.port=1194]
+    volumes: ['${DOCKER_CONFIG}/openvpn:/etc/openvpn']
 version: '3.0'
