@@ -1,7 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-if [ $UID -ne 0 ]; then       # or `id -u`
-    exec sudo -- "$0" "$@"
+if [ $(id -u) != "0" ]
+  then
+    echo "Please use sudo"
+  exit
 fi
 
 target=/media/backup/
